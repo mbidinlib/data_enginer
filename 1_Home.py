@@ -15,8 +15,9 @@ import time as tm
 
 #st.sidebar.markdown("# Home page")
 with st.sidebar.container():
+    link = "[Mathew Bidinlib](github.com/mbidinlib)"
     st.image('picture.jpg',
-    caption='Mathew Bidinlib', width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+    caption=link, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
     #st.image(image, width= use_column_width=True)
 
 st.markdown("# MGlory Data Engineering Toolkit ")
