@@ -23,7 +23,7 @@ datatab1, datatab2, datatab3, datatab4, datatab5 = st.tabs(["Dataset 1","Dataset
 
 with datatab1:
     st.markdown('Select your data file')
-    df1 = st.file_uploader("Choose a file", key=d'f1')
+    df1 = st.file_uploader("Choose a file", key='df1')
     dataset1 = st.text_input('Enter name of dataset', 'dataset1')
 
 with datatab2:
