@@ -15,7 +15,7 @@ import time as tm
 
 #st.sidebar.markdown("# Home page")
 with st.sidebar.container():
-    st.image('https://github.com/mbidinlib/data_enginer/picture.jpg',
+    st.image('picture.jpg',
     caption='Mathew Bidinlib', width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
     #st.image(image, width= use_column_width=True)
 
