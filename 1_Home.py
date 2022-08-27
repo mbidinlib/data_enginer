@@ -24,7 +24,7 @@ st.markdown("""
     Welcome to MGlory Data Engineering toolkit.
     This is a python based tool that would help you prepare your dataset for analysis.
     The tool contains the following components:
-    - **Data Import"
+    - **Data Import**
     With the data import page, you would be able to import upto five (5) datasets for your work.
     Each dataset is in a seperate tab and you can navigate across tabs
     - **Check Duplicates**
@@ -35,9 +35,4 @@ st.markdown("""
     - **Merge Data**
     This would help you to merge selected datasets that you imported into one. 
     You may also append datasets if needed
-    """)
-
-st.markdown("##### About Author")
-st.markdown("""
-    Visit the author's [GitHub page](github.com/mbidinlib) to see more works from the author
     """)
