@@ -15,4 +15,5 @@ import matplotlib.pyplot as plt
 import time as tm
 
 
-st.markdown("Page 444")
+st.markdown("# Check Outliers")
+st.sidebar.markdown("# Check Outliers-")

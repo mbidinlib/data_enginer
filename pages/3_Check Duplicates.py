@@ -14,6 +14,5 @@ import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import time as tm
 
-
-st.markdown("# Merge ")
-st.sidebar.markdown("# Merge Data-")
+st.markdown("# Check Duplicates ")
+st.sidebar.markdown("# Check Duplicates-")
