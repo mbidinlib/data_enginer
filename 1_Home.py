@@ -24,22 +24,15 @@ st.markdown("""
     Welcome to MGlory Data Engineering toolkit.
     This is a python based tool that would help you prepare your dataset for analysis.
     The tool contains the following components:
-    """)
-st.markdown("### Data Import")
-st.markdown("""
+    -**Data Import:**
     With the data import page, you would be able to import upto five (5) datasets for your work.
-    Each dataset is in a seperate tab and you can navigate across tabs""")
-st.markdown("### Check Duplicates")
-st.markdown("""
+    Each dataset is in a seperate tab and you can navigate across tabs
+    -**Check Duplicates:***
     You can check if your data has dul=plicates using some key variables 
     and also remove duplicates if there are any
-    """)
-st.markdown("### Check Outliers")
-st.markdown("""
+    -** Check Outliers:**
     You can check if some variables have outliers given a certain multiplier effect
-    """)
-st.markdown("### Merge Data")
-st.markdown("""
+    -""Merge Data:""
     This would help you to merge selected datasets that you imported into one. 
     You may also append datasets if needed
     """)
