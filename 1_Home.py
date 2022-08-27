@@ -14,8 +14,11 @@ import matplotlib.pyplot as plt
 import time as tm
 
 #st.sidebar.markdown("# Home page")
+with st.sidebar.container():
+    image = Image.open('https://github.com/mbidinlib/data_enginer/blob/main/picture.jpg')
+    #st.image(image, width= use_column_width=True)
 
-st.markdown("# MGlory Data Engineering Tolkit ")
+st.markdown("# MGlory Data Engineering Toolkit ")
 st.markdown("Welcome to MGlory Data Engineering toolkit.\
     This is a python based tool that would help you prepare your dataset for analysis.\
     The tool contains the following components:\
