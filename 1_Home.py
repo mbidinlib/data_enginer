@@ -44,7 +44,8 @@ st.markdown("""
     You may also append datasets if needed
     """)
 
-st.markdown("#### About Author")
+st.markdown("")
+st.markdown("##### About Author")
 st.markdown("""
-    Visit the author's [GitHub page](github.com/mbidinlib) to see more works from the author
+    Visit the author's [GitHub page](https://github.com/mbidinlib) to see more works from the author
     """)
