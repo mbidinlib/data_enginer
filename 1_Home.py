@@ -27,12 +27,12 @@ st.markdown("""
     - **Data Import:**
     With the data import page, you would be able to import upto five (5) datasets for your work.
     Each dataset is in a seperate tab and you can navigate across tabs
-    - **Check Duplicates:***
+    - **Check Duplicates:**
     You can check if your data has dul=plicates using some key variables 
     and also remove duplicates if there are any
-    - ** Check Outliers:**
+    - **Check Outliers:**
     You can check if some variables have outliers given a certain multiplier effect
-    - ""Merge Data:""
+    - **Merge Data:**
     This would help you to merge selected datasets that you imported into one. 
     You may also append datasets if needed
     """)
