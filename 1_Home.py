@@ -13,6 +13,23 @@ import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import time as tm
 
+
+#Installed programs
+#npm install streamlit-component-lib
+
+#Add background
+st.markdown(
+   f'''
+   <style>
+   p {
+    background-color:#B97022
+   }
+   </style>
+   ''',
+   unsafe_allow_html=True)
+#background-image: url('picture.jpg');
+
+
 #st.sidebar.markdown("# Home page")
 with st.sidebar.container():
     st.image('picture.jpg',
