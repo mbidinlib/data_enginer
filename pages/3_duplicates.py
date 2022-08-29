@@ -20,17 +20,44 @@ import matplotlib.pyplot as plt
 st.markdown("# Check Duplicates ")
 st.sidebar.markdown("# Check Duplicates-")
 
-#df = importdata.load_page()
+#Call datasets imported from import
 if st.session_state['df1'] is not None:
      try:
           data1 = pd.read_csv(st.session_state['df1'])
      except Exception as e:
           print(e)
           data1 = pd.read_excel(st.session_state['df1'])
-     st.write(data1)
+     #st.write(data1)
+if st.session_state['df2'] is not None:
+     try:
+          data2 = pd.read_csv(st.session_state['df2'])
+     except Exception as e:
+          print(e)
+          data2 = pd.read_excel(st.session_state['df2'])
 
-option = st.selectbox(
+if st.session_state['df3'] is not None:
+     try:
+          data3 = pd.read_csv(st.session_state['df3'])
+     except Exception as e:
+          print(e)
+          data3 = pd.read_excel(st.session_state['df3'])
+
+if st.session_state['df4'] is not None:
+     try:
+          data4 = pd.read_csv(st.session_state['df4'])
+     except Exception as e:
+          print(e)
+          data4 = pd.read_excel(st.session_state['df4'])
+
+if st.session_state['df5'] is not None:
+     try:
+          data5 = pd.read_csv(st.session_state['df5'])
+     except Exception as e:
+          print(e)
+          data5 = pd.read_excel(st.session_state['df5'])
+
+
+select_df = st.selectbox(
      'Select the dataset you want to check',
-     (data1, "data2"))
-st.write(option)
-st.write(st.session_state['df1'])
+     (data1, data2, data3, data4, data5))
+st.write(select_df)
