@@ -12,11 +12,14 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
-import time as tm
+
+#Import pages
+import src.pages.Import_Data as importdata
 
 st.markdown("# Check Duplicates ")
 st.sidebar.markdown("# Check Duplicates-")
 
+df = importdata.load_page()
 option = st.selectbox(
      'Select the dataset you want to check',
      (df1, df2, df3, df4, df5))
