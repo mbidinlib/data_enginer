@@ -23,24 +23,30 @@ datatab1, datatab2, datatab3, datatab4, datatab5 = st.tabs(["Dataset 1","Dataset
 with datatab1:
     st.markdown('Select your data file')
     df1 = st.file_uploader("Choose a file", key='df1')
-    dataset1 = st.text_input('Enter name of dataset', 'dataset1')
+    dataset1 = st.text_input('Enter name of dataset', df1)
+    st.write(dataset1)
+
 
 with datatab2:
     st.markdown('Select your data file')
     df2 = st.file_uploader("Choose a file", key='df2')
     dataset2 = st.text_input('Enter name of dataset', 'dataset2')
+    st.write(df2)
 
 with datatab3:
     st.markdown('Select your data file')
     df3 = st.file_uploader("Choose a file", key='df3')
     dataset3 = st.text_input('Enter name of dataset', 'dataset3')
+    st.write(df3)
 
 with datatab4:
     st.markdown('Select your data file')
     df4 = st.file_uploader("Choose a file", key='df4')
     dataset4 = st.text_input('Enter name of dataset', 'dataset4')
+    st.write(df4)
 
 with datatab5:
     st.markdown('Select your data file')
     df5 = st.file_uploader("Choose a file", key='df5')
     dataset5 = st.text_input('Enter name of dataset', 'dataset5')
+    st.write(df5)
