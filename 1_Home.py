@@ -23,12 +23,13 @@ def set_background(png_file):
     page_bg_img = '''
     <style>
     .stApp {
-    background-image: url("picture.jpg");
+    background-image: url("data:image/jpg;base64,%s");
     background-size: cover;
     }
     </style>
     ''' % bin_str
-st.markdown(page_bg_img, unsafe_allow_html=True)
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+set_background('picture.jpg')
 
 
 #st.sidebar.markdown("# Home page")
