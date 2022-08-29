@@ -22,8 +22,8 @@ st.markdown(
    f'''
    <style>
    p {
-    background-color:'#B97022'
-   }
+    background-image: url('picture.jpg');   
+    }
    </style>
    ''',
    unsafe_allow_html=True)
