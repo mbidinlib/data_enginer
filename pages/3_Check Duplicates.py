@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 st.markdown("# Check Duplicates ")
 st.sidebar.markdown("# Check Duplicates-")
 
-df = importdata.load_page()
+#df = importdata.load_page()
 option = st.selectbox(
      'Select the dataset you want to check',
      ("data1", "data2"))

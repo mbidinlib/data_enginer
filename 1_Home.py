@@ -70,3 +70,10 @@ st.markdown("""
     This would help you to merge selected datasets that you imported into one. 
     You may also append datasets if needed
     """)
+
+def footer(st):
+    st.write("Developed by [Mathew Bidinlib](https://github.com/mbidinlib/)")
+
+
+def header(st):
+    st.write("This app is free to use")
