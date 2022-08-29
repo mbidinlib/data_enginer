@@ -40,6 +40,8 @@ st.markdown(
     p {
         font-family: open sans;
     }    
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
 </style>
 <body style="background-color:#1c87c9;">
 </body>
@@ -77,13 +79,4 @@ def footer(st):
 
 def header(st):
     st.write("This app is free to use")
-
-# Remove Made with Streamlit note at the bottom
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
