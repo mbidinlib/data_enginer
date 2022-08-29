@@ -20,26 +20,26 @@ import time as tm
 #Add background color
 st.markdown(
     '''<style>
-    body {background-color: #D6DBDF;}
+    body {background-color: powderblue;}
     h1 {
         color: maroon;
         font-family: verdana;
-        font-size: 80%;
+        font-size: 100%;
     }
     h2 {
         color: #BA4A00;
         font-family: verdana;
-        font-size: 80%;
+        font-size: 100%;
     }
     h3 {
         color: #DC7633;
         font-family: verdana;
-        font-size: 300%;
+        font-size: 100%;
     }
     p {
         color: #566573;
         font-family: courier;
-        font-size: 80%;
+        font-size: 100%;
     }    
 </style>''', unsafe_allow_html=True)
 
