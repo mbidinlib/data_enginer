@@ -39,7 +39,11 @@ st.markdown(
     p {
         font-family: open sans;
     }    
-</style>''', unsafe_allow_html=True)
+</style>
+<body style="background-color:#1c87c9;">
+</body>
+
+''', unsafe_allow_html=True)
 
 
 #st.sidebar.markdown("# Home page")
@@ -57,7 +61,7 @@ st.markdown("""
     With the data import page, you would be able to import upto five (5) datasets for your work.
     Each dataset is in a seperate tab and you can navigate across tabs
     - **Check Duplicates**
-    You can check if your data has dul=plicates using some key variables 
+    You can check if your data has duplicates using some key variables 
     and also remove duplicates if there are any
     - **Check Outliers**
     You can check if some variables have outliers given a certain multiplier effect
