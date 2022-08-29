@@ -24,7 +24,9 @@ with datatab1:
     st.markdown('Select your data file')
     df1 = st.file_uploader("Choose a file", key='df1')
     dataset1 = st.text_input('Enter name of dataset', df1)
-    st.write(dataset1)
+    if df1 is not None:
+        df = pd.read_csv(dataset1)
+        st.write(dataset1)
 
 
 with datatab2:
