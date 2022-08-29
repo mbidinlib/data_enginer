@@ -32,7 +32,10 @@ def add_bg_from_url():
          unsafe_allow_html=True
      )
 
-add_bg_from_url() 
+#add_bg_from_url() 
+#Add background color
+st.markdown('<style>h1{color: red;}</style>', unsafe_allow_html=True)
+
 
 #st.sidebar.markdown("# Home page")
 with st.sidebar.container():
