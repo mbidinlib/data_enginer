@@ -24,7 +24,7 @@ st.markdown(
     h1 {
         color: maroon;
         font-family: verdana;
-        font-size: 100%;
+        font-size: 220%;
     }
     h2 {
         color: #BA4A00;
@@ -39,7 +39,7 @@ st.markdown(
     p {
         color: #566573;
         font-family: courier;
-        font-size: 100%;
+        font-size: 200%;
     }    
 </style>''', unsafe_allow_html=True)
 
