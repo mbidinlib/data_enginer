@@ -22,7 +22,7 @@ st.markdown(
    f'''
    <style>
    p {
-    background-color:#B97022
+    background-color:'#B97022'
    }
    </style>
    ''',
