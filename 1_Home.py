@@ -19,7 +19,7 @@ import time as tm
 
 #Add background color
 st.markdown(
-    '''<style>h1{color: #EBEDEF;}
+    '''<style>h1{color: maroon;}
     h2{color: green;}
     </style>''', unsafe_allow_html=True)
 
