@@ -30,7 +30,7 @@ with datatab1:
         except Exception as e:
             print(e)
             df1 = pd.read_excel(dfa1)
-        #st.write(df1)
+        st.write(df1)
 
 with datatab2:
     st.markdown('Select your data file')
@@ -61,13 +61,4 @@ with datatab5:
         df5 = pd.read_csv(dfa5)
         st.write(df5)
 
-
-if ('df1' not in st.session_state) and (df1 != ''):
-    st.session_state['df1'] = df1
-
-st.write('first name you have entered:')
-if 'df1' in st.session_state:
-    st.write(st.session_state['df1'])
-
-st.write(st.session_state)
 
