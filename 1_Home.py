@@ -20,7 +20,9 @@ import time as tm
 #Add background color
 st.markdown(
     '''<style>
-    body {background-color: powderblue;}
+    body {
+        background-color: brown;
+        }
     h1 {
         color: maroon;
         font-family: verdana;
