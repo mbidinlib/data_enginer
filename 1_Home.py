@@ -18,16 +18,17 @@ import time as tm
 #npm install streamlit-component-lib
 
 #Add background
-st.markdown(
-   f'''
-   <style>
-   p {
-    background-image: url('picture.jpg');   
+def set_background(png_file):
+    bin_str = get_base64(png_file)
+    page_bg_img = '''
+    <style>
+    .stApp {
+    background-image: url("picture.jpg");
+    background-size: cover;
     }
-   </style>
-   ''',
-   unsafe_allow_html=True)
-#background-image: url('picture.jpg');
+    </style>
+    ''' % bin_str
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 #st.sidebar.markdown("# Home page")
