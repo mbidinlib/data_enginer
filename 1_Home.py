@@ -21,7 +21,7 @@ import time as tm
 st.markdown("""
 <style>
 body {
-    color: #fff;
+    color: #EAEDED;
     background-color: #EAEDED;
     etc. 
 }
