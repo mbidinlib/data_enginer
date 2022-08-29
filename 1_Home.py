@@ -23,7 +23,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("picture.jpg");
+             background-image: url("https://github.com/mbidinlib/data_enginer/blob/main/picture.jpg");
              background-attachment: fixed;
              background-size: cover
          }}
