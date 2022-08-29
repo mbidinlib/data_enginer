@@ -25,19 +25,19 @@ st.markdown(
         }
     h1 {
         color: maroon;
-        font-family: verdana;
+        font-family: Tahoma;
+        font-size: 200%;
     }
     h2 {
         color: #BA4A00;
-        font-family: verdana;
+        font-family: open sans;
     }
     h3 {
         color: #DC7633;
-        font-family: verdana;
+        font-family: oopen sans;
     }
     p {
-        color: #566573;
-        font-family: courier;
+        font-family: open sans;
     }    
 </style>''', unsafe_allow_html=True)
 
