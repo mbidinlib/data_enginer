@@ -17,22 +17,6 @@ import time as tm
 #Installed programs
 #npm install streamlit-component-lib
 
-#Add background image
-def add_bg_from_url():
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background-image: url("https://github.com/mbidinlib/data_enginer/blob/main/picture.jpg");
-             background-attachment: fixed;
-             background-size: cover
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-
-#add_bg_from_url() 
 #Add background color
 st.markdown('<style>h1{color: red;}</style>', unsafe_allow_html=True)
 
