@@ -24,12 +24,12 @@ st.markdown(
     h1 {
         color: maroon;
         font-family: verdana;
-        font-size: 300%;
+        font-size: 80%;
     }
     h2 {
         color: #BA4A00;
         font-family: verdana;
-        font-size: 300%;
+        font-size: 80%;
     }
     h3 {
         color: #DC7633;
@@ -37,10 +37,11 @@ st.markdown(
         font-size: 300%;
     }
     p {
-        color: red;
+        color: #566573;
         font-family: courier;
-  font-size: 160%;
-}    </style>''', unsafe_allow_html=True)
+        font-size: 80%;
+    }    
+</style>''', unsafe_allow_html=True)
 
 
 #st.sidebar.markdown("# Home page")
