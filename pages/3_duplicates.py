@@ -25,3 +25,4 @@ option = st.selectbox(
      'Select the dataset you want to check',
      ("data1", "data2"))
 st.write(option)
+st.write(st.session_state['df1'])
