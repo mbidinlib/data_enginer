@@ -13,6 +13,7 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import time as tm
+from streamlit_multipage import MultiPage
 
 
 st.markdown("# Import Data ")
@@ -22,11 +23,13 @@ datatab1, datatab2, datatab3, datatab4, datatab5 = st.tabs(["Dataset 1","Dataset
 
 with datatab1:
     st.markdown('Select your data file')
-    dfa1 = st.file_uploader("Choose a file", key='df1')
+    dfa1 = st.file_uploader("Choose a file",type=['csv', 'xlsx'], key='df1')
     if dfa1 is not None:
-        df1 = pd.read_csv(dfa1)
-        st.write(df1)
-
+        try:
+            df1 = pd.read_csv(dfa1)
+        except Exception as e:
+            print(e)
+            df1 = pd.read_excel(dfa1)
 
 with datatab2:
     st.markdown('Select your data file')
@@ -56,3 +59,5 @@ with datatab5:
     if dfa5 is not None:
         df5 = pd.read_csv(dfa5)
         st.write(df5)
+
+MultiPage.save({"data1": df1, "data2": df2})

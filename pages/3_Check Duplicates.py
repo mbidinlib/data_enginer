@@ -14,7 +14,8 @@ import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 
 #Import pages
-import src.pages.Import_Data as importdata
+from streamlit_multipage import MultiPage
+
 
 st.markdown("# Check Duplicates ")
 st.sidebar.markdown("# Check Duplicates-")
@@ -22,5 +23,5 @@ st.sidebar.markdown("# Check Duplicates-")
 df = importdata.load_page()
 option = st.selectbox(
      'Select the dataset you want to check',
-     (df1, df2, df3, df4, df5))
-st.write('You selected:', option)
+     ("data1", "data2"))
+st.write(option)

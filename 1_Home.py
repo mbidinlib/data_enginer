@@ -12,10 +12,11 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import time as tm
-
+from streamlit_multipage import MultiPage
 
 #Installed programs
-#npm install streamlit-component-lib
+#pip install streamlit-multipage
+
 
 #Add background color
 st.markdown(
