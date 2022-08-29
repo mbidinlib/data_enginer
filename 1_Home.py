@@ -19,9 +19,28 @@ import time as tm
 
 #Add background color
 st.markdown(
-    '''<style>h1{color: maroon;}
-    h2{color: green;}
-    </style>''', unsafe_allow_html=True)
+    '''<style>
+    body {background-color: #D6DBDF;}
+    h1 {
+        color: maroon;
+        font-family: verdana;
+        font-size: 300%;
+    }
+    h2 {
+        color: #BA4A00;
+        font-family: verdana;
+        font-size: 300%;
+    }
+    h3 {
+        color: #DC7633;
+        font-family: verdana;
+        font-size: 300%;
+    }
+    p {
+        color: red;
+        font-family: courier;
+  font-size: 160%;
+}    </style>''', unsafe_allow_html=True)
 
 
 #st.sidebar.markdown("# Home page")
