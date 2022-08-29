@@ -16,3 +16,8 @@ import time as tm
 
 st.markdown("# Check Duplicates ")
 st.sidebar.markdown("# Check Duplicates-")
+
+option = st.selectbox(
+     'Select the dataset you want to check',
+     (df1, df2, df3, df4, df5))
+st.write('You selected:', option)
