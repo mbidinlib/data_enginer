@@ -12,7 +12,6 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import time as tm
-from streamlit_multipage import MultiPage
 
 #Installed programs
 #pip install streamlit-multipage

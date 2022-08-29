@@ -14,7 +14,7 @@ import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 
 #Import pages
-from streamlit_multipage import MultiPage
+#from streamlit_multipage import MultiPage
 
 
 st.markdown("# Check Duplicates ")

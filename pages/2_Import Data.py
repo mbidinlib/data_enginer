@@ -13,7 +13,7 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import time as tm
-from streamlit_multipage import MultiPage
+#from streamlit_multipage import MultiPage
 
 
 st.markdown("# Import Data ")
@@ -60,4 +60,4 @@ with datatab5:
         df5 = pd.read_csv(dfa5)
         st.write(df5)
 
-MultiPage.save({"data1": df1, "data2": df2})
+#MultiPage.save({"data1": df1, "data2": df2})
