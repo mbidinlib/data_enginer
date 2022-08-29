@@ -18,7 +18,10 @@ import time as tm
 #npm install streamlit-component-lib
 
 #Add background color
-st.markdown('<style>h1{color: red;}</style>', unsafe_allow_html=True)
+st.markdown(
+    '''<style>h1{color: #EBEDEF;}
+    h2{color: green;}
+    </style>''', unsafe_allow_html=True)
 
 
 #st.sidebar.markdown("# Home page")
