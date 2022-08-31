@@ -40,14 +40,14 @@ with datatab1:
         pr = get_profile_report(file_info, df)
         st_profile_report(pr)
 
-        def data_uploader_form():
-            file_upload_form = st.form(key="file_upload")
-            with file_upload_form:
-                data_file = st.file_uploader("Upload File", type=['csv', 'xlsx'], key="upload")
-                delim_list = ["pipe (|)", r"tab (\t)", "comma (,)", "semicolon (;)"]
-                delim = st.selectbox("Select File Seperator/Delimiter", delim_list, key="delim")
-                file_upload_form.form_submit_button(label='Profile Data', on_click=profiler)
-
+    def data_uploader_form():
+        file_upload_form = st.form(key="file_upload")
+        with file_upload_form:
+            data_file = st.file_uploader("Upload File", type=['csv', 'xlsx'], key="upload")
+            delim_list = ["pipe (|)", r"tab (\t)", "comma (,)", "semicolon (;)"]
+            delim = st.selectbox("Select File Seperator/Delimiter", delim_list, key="delim")
+            file_upload_form.form_submit_button(label='Profile Data', on_click=profiler)
+    data_uploader_form()
 
     '''
     st.markdown('Select your data file')
