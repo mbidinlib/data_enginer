@@ -36,7 +36,7 @@ with datatab1:
         delimiter = delim.split(" ")[1][1:-1]
         df = pd.read_csv(file, sep=delimiter, engine="python")
         file_info = {"Filename": file.name, "FileType": file.type, "FileSize": file.size}
-        st.write(file_info)
+        st.write(file)
         pr = get_profile_report(file_info, df)
         st_profile_report(pr)
 
