@@ -21,7 +21,7 @@ st.markdown("# Check Duplicates ")
 st.sidebar.markdown("# Check Duplicates-")
 
 #Call datasets imported from import
-data1 = pd.read_csv(st.session_state['file'])
+data1 = st.session_state['file']
 st.write(data1)
 
 '''
