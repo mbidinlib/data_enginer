@@ -21,13 +21,15 @@ st.markdown("# Check Duplicates ")
 st.sidebar.markdown("# Check Duplicates-")
 
 #Call datasets imported from import
-if st.session_state['df1'] is not None:
+if st.session_state['file'] is not None:
      try:
-          data1 = pd.read_csv(st.session_state['df1'])
+          data1 = pd.read_csv(st.session_state['file'])
      except Exception as e:
           print(e)
-          data1 = pd.read_excel(st.session_state['df1'])
+          data1 = pd.read_excel(st.session_state['file'])
      #st.write(data1)
+
+'''
 if st.session_state['df2'] is not None:
      try:
           data2 = pd.read_csv(st.session_state['df2'])
@@ -55,9 +57,9 @@ if st.session_state['df5'] is not None:
      except Exception as e:
           print(e)
           data5 = pd.read_excel(st.session_state['df5'])
-
+'''
 
 select_df = st.selectbox(
      'Select the dataset you want to check',
-     (data1, data2, data3, data4, data5))
+     (data1))
 st.write(select_df)
