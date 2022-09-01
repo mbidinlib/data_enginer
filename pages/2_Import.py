@@ -26,13 +26,16 @@ with datatab1:
     st.markdown('Select your data file')
     dfa1 = st.file_uploader("Choose a file",type=['csv', 'xlsx'], key=persist('df1'))
     if dfa1 is not None:
-        try:
-            df1 = pd.read_csv(dfa1)
-        except Exception as e:
-            print(e)
-            df1 = pd.read_excel(dfa1)
-        st.write(df1)
-
+        if 'df1' not in st.session.state:
+            try:
+                df1 = pd.read_csv(dfa1)
+            except Exception as e:
+                print(e)
+                df1 = pd.read_excel(dfa1)
+            st.write(df1)
+        else:
+            df1=st.session_state.pd.read_csv
+            
 with datatab2:
     st.markdown('Select your data file')
     dfa2 = st.file_uploader("Choose a file", key=persist('df2'))
