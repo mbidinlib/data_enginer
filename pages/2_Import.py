@@ -22,17 +22,17 @@ with datatab1:
         dfa1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'])
     #Column two 
     with col2:
-        st.header("Data overview")
         if dfa1 is not None:
             try:
                 st.session_state["dfa1"] = dfa1.getvalue().decode("utf-8")
             except:
                 st.session_state["dfa1"] = dfa1.getvalue()
         if "dfa1" in st.session_state:
+            st.header("Data overview")  # Give it a header
             df1= st.session_state["dfa1"]
-            try:                
+            try:     # CSV            
                 st.dataframe(pd.read_csv(StringIO(df1)))
-            except:
-                st.dataframe(pd.read_excel(StringIO(df1)))
-            
+            except: #xls , not yet finalized
+                #st.dataframe(pd.read_excel(StringIO(df1)))
+                st.write("This file is not a csv file. Support for Other file extentions would be added later")
 

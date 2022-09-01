@@ -20,7 +20,7 @@ if "dfa1" in st.session_state:
      df1= st.session_state["dfa1"]
      select_df = st.selectbox(
           'Select the dataset you want to check',
-          (df1))
+          ([df1,df1]))
      try:             
           st.dataframe(pd.read_csv(StringIO(df1)))
      except:
