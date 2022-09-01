@@ -12,8 +12,8 @@ import streamlit as st
 #pip install streamlit-multipage
 
 #Add background color
-st.markdown(
-    '''<style>
+body_format = '''
+<style>
     body {
         background-color: brown;
         secondary-background-color:red;
@@ -28,7 +28,7 @@ st.markdown(
         font-family: open sans;
     }
     h3 {
-        color: #DC7633;
+        color: #045106;
         font-family: oopen sans;
     }
     p {
@@ -36,11 +36,12 @@ st.markdown(
     }    
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-</style>
-<body style="background-color:#1c87c9;">
-</body>
+    </style>
+    <body style="background-color:#1c87c9;">
+    </body>
 
-''', unsafe_allow_html=True)
+    '''
+st.markdown(body_format, unsafe_allow_html=True)
 
 
 #st.sidebar.markdown("# Home page")
@@ -59,11 +60,12 @@ st.markdown("""
 hcol1, hcol2 = st.columns(2)
 
 with hcol1:
-    st.subheader("Data Import")
-    st.markdown('''
-    This page is the starting point where you would be able to import upto five (5) datasets for your work.
-    Each dataset is in a seperate tab and you can navigate across tabs
-    ''')
+    with st.expander:
+        st.subheader("Data Import")
+        st.markdown('''
+        This page is the starting point where you would be able to import upto five (5) datasets for your work.
+        Each dataset is in a seperate tab and you can navigate across tabs
+        ''')
 with hcol2:
     st.subheader("Duplicates")
     st.markdown('''
@@ -109,7 +111,7 @@ text-align: center;
 }
 </style>
 <div class="footer">
-<p>Developed with ❤ by <a style='display: block; text-align: center;' href="https://www.github.com/mbidinlib/" target="_blank">Mathew Bidinlib S</a></p>
+<p>Developed with ❤ by <a style='display: block; text-align: center;' href="https://www.github.com/mbidinlib/" target="_blank">Mathew Bidinlib </a></p>
 </div>
 """
 st.markdown(footer,unsafe_allow_html=True)
