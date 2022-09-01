@@ -11,6 +11,7 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
+from io import StringIO
 from persist import persist, load_widget_state
 
 #Installed programs

@@ -4,13 +4,9 @@ Date: Wed Aug 23 21:12:18 2022
 @author: Glooory
 Purpose: Data Engineering
 '''
-import streamlit as st
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from persist import persist, load_widget_state
 from io import StringIO
-
+import pandas as pd
+import streamlit as st
 
 st.markdown("# Import Data ")
 #st.sidebar.markdown("# Import Data-")
@@ -18,13 +14,22 @@ st.markdown("# Import Data ")
 datatab1, datatab2, datatab3, datatab4, datatab5 = st.tabs(["Dataset 1","Dataset 2", "Dataset 3", "Dataset 4","Dataset 5"])
 
 with datatab1:
-    st.markdown('Select your data file')
-    dfa1 = st.file_uploader("Choose a file",type = "csv", key=persist('df1'))
-    if dfa1:
-        if 'df1a' not in st.session.state:
-            st.session_state["dfa1"]= dfa1.getvalue().decode("utf-8")
-        if 'df1a' in st.session.state:
-            st.dataframe(pd.read_csv(StringIO(st.session_state["dfa1"])))           
+    #Split into two columns
+    col1, col2 = st.columns(2)
+
+    #Column one
+    with col1:
+        st.subheader("Select file")
+        dfa1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'])
+    #Column two 
+    with col2:
+        st.header("Data overview")
+        if dfa1 is not None:
+            st.session_state["dfa1"] = dfa1.getvalue().decode("utf-8")
+        if "dfa1" in st.session_state:
+            df1= st.session_state["dfa1"]
+            st.dataframe(pd.read_csv(StringIO(df1)))
+
 with datatab2:
     st.markdown('Select your data file')
     dfa2 = st.file_uploader("Choose a file", key=persist('df2'))
