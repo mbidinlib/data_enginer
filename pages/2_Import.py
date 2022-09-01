@@ -24,9 +24,9 @@ datatab1, datatab2, datatab3, datatab4, datatab5 = st.tabs(["Dataset 1","Dataset
 
 with datatab1:
     st.markdown('Select your data file')
-    dfa1 = st.file_uploader("Choose a file",type=['csv', 'xlsx'], key=persist('df1'))
+    dfa1 = st.file_uploader("Choose a file", key=persist('df1'))
     if dfa1:
-        if 'df1' in st.session.state:
+        if 'pd.read_csv' in st.session.state:
             df1=st.session_state.pd.read_csv   
         else:
             try:
