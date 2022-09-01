@@ -18,17 +18,17 @@ with datatab1:
     #Column one
     with col1:
         st.subheader("Select file")
-        dfa1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data1")
+        dataset1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data1")
     #Column two 
     with col2:
-        if dfa1 is not None:
+        if dataset1 is not None:
             try:
-                st.session_state["dfa1"] = dfa1.getvalue().decode("utf-8")
+                st.session_state["dataset1"] = dataset1.getvalue().decode("utf-8")
             except:
-                st.session_state["dfa1"] = dfa1.getvalue()
-        if "dfa1" in st.session_state:
+                st.session_state["dataset1"] = dataset1.getvalue()
+        if "dataset1" in st.session_state:
             st.header("Data overview")  # Give it a header
-            df1= st.session_state["dfa1"]
+            dataset1= st.session_state["dataset1"]
             try:     # CSV            
                 st.dataframe(pd.read_csv(StringIO(df1)))
             except: #xls , not yet finalized
@@ -40,17 +40,17 @@ with datatab2:
     #Column one
     with col1:
         st.subheader("Select file")
-        dfa2 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data2")
+        dataset2 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data2")
     #Column two 
     with col2:
-        if dfa2 is not None:
+        if dataset2 is not None:
             try:
-                st.session_state["dfa2"] = dfa2.getvalue().decode("utf-8")
+                st.session_state["dataset2"] = dataset2.getvalue().decode("utf-8")
             except:
-                st.session_state["dfa2"] = dfa2.getvalue()
-        if "dfa2" in st.session_state:
+                st.session_state["dataset2"] = dataset2.getvalue()
+        if "dataset2" in st.session_state:
             st.header("Data overview")  # Give it a header
-            df2= st.session_state["dfa2"]
+            df2= st.session_state["dataset2"]
             try:     # CSV            
                 st.dataframe(pd.read_csv(StringIO(df2)))
             except: #xls , not yet finalized
