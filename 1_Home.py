@@ -8,6 +8,9 @@ from io import StringIO
 import pandas as pd
 import streamlit as st
 
+# Set page outline
+st. set_page_config(layout="wide")
+
 #Installed programs
 #pip install streamlit-multipage
 
