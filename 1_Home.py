@@ -4,14 +4,9 @@ Date: Wed Aug 23 21:12:18 2022
 @author: Glooory
 Purpose: Data Engineering
 '''
-import streamlit as st
+from io import StringIO
 import pandas as pd
-import numpy as np
-import plotly.express as px
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
-import matplotlib.pyplot as plt
-from persist import persist, load_widget_state
+import streamlit as st
 
 #Installed programs
 #pip install streamlit-multipage
