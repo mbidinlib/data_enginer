@@ -93,7 +93,7 @@ PAGES[page]()
 
 PAGES = {
     "Home": Home,
-    "Import": import,
+    "Import": Import,
 }
 
 if __name__ == "__main__":
