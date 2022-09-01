@@ -59,28 +59,28 @@ st.markdown("""
 hcol1, hcol2 = st.columns(2)
 
 with hcol1:
-    st.markdown("<h4><u>Data Import</u></h4>",unsafe_allow_html=True)
-    exp1 = st.expander("Check help note",expanded=True)
+    st.markdown("<h4><u>Import Page</u></h4>",unsafe_allow_html=True)
+    exp1 = st.expander("Help note",expanded=True)
     exp1.write('''
     This page is the starting point where you would be able to import upto five (5) datasets for your work.
     Each dataset is in a seperate tab and you can navigate across tabs
     ''')
 with hcol2:
-    st.title("Duplicates")
-    exp2 = st.expander("Check help note",expanded=True)
+    st.markdown("<h4><u>Duplicates Page/u></h4>",unsafe_allow_html=True)
+    exp2 = st.expander("Help note",expanded=True)
     exp2.write(''''
     This page is would help you check for duplicates in the imported datasets using some key variables 
     and also remove duplicates if there are any
     ''')
 with hcol1:
-    st.title("Outliers")
+    st.markdown("<h4><u>Outliers Page</u></h4>",unsafe_allow_html=True)
     exp3 = st.expander("Check help note",expanded=True)
     exp3.write(''''
     This page is would help you check for outliers in your importd dataset
     ''')
 
 with hcol2:
-    st.title("Merge")
+    st.markdown("<h4><u>Merge Page</u></h4>",unsafe_allow_html=True)
     exp4 = st.expander("Check help note",expanded=True)
     exp4.write(''''
     This would help you to merge selected datasets that you imported into one. 
