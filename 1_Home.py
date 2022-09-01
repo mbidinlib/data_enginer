@@ -60,12 +60,12 @@ st.markdown("""
 hcol1, hcol2 = st.columns(2)
 
 with hcol1:
-    with st.expander:
-        st.subheader("Data Import")
-        st.markdown('''
-        This page is the starting point where you would be able to import upto five (5) datasets for your work.
-        Each dataset is in a seperate tab and you can navigate across tabs
-        ''')
+    st.subheader("Data Import")
+    exp1 = st.expander("Check help note")
+    exp1.write('''
+    This page is the starting point where you would be able to import upto five (5) datasets for your work.
+    Each dataset is in a seperate tab and you can navigate across tabs
+    ''')
 with hcol2:
     st.subheader("Duplicates")
     st.markdown('''
