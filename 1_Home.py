@@ -48,7 +48,7 @@ with st.sidebar.container():
     sbcol1, sbcol2, = st.columns(2)
     
     sbcol1.image('picture.jpg',
-    caption='Mathew Bidinlib', width=None, use_column_width=50, clamp=False, channels="RGB", output_format="auto")
+    caption='Mathew Bidinlib', width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
     #st.image(image, width= use_column_width=True)
 
 st.markdown("# MGlory Data Engineering Toolkit ")
@@ -61,15 +61,15 @@ st.markdown("""
 hcol1, hcol2 = st.columns(2)
 
 with hcol1:
-    st.markdown("<h4><u>Import Page</u></h4>",unsafe_allow_html=False)
-    exp1 = st.expander("Help note",expanded=True)
+    st.markdown("<h4><u>Import Page</u></h4>",unsafe_allow_html=True)
+    exp1 = st.expander("Help note",expanded=False)
     exp1.write('''
     This page is the starting point where you would be able to import upto five (5) datasets for your work.
     Each dataset is in a seperate tab and you can navigate across tabs
     ''')
 with hcol2:
-    st.markdown("<h4><u>Duplicates Page</u></h4>",unsafe_allow_html=False)
-    exp2 = st.expander("Help note",expanded=True)
+    st.markdown("<h4><u>Duplicates Page</u></h4>",unsafe_allow_html=True)
+    exp2 = st.expander("Help note",expanded=False)
     exp2.write(''''
     This page is would help you check for duplicates in the imported datasets using some key variables 
     and also remove duplicates if there are any
@@ -82,8 +82,8 @@ with hcol1:
     ''')
 
 with hcol2:
-    st.markdown("<h4><u>Merge Page</u></h4>",unsafe_allow_html=False)
-    exp4 = st.expander("Check help note",expanded=True)
+    st.markdown("<h4><u>Merge Page</u></h4>",unsafe_allow_html=True)
+    exp4 = st.expander("Check help note",expanded=False)
     exp4.write(''''
     This would help you to merge selected datasets that you imported into one. 
     You may also append datasets if needed
