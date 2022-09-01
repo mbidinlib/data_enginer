@@ -77,14 +77,14 @@ with hcol2:
     ''')
 with hcol1:
     st.markdown("<h4><u>Outliers Page</u></h4>",unsafe_allow_html=True)
-    exp3 = st.expander("Check help note",expanded=False)
+    exp3 = st.expander("Help note",expanded=False)
     exp3.write(''''
     This page is would help you check for outliers in your importd dataset
     ''')
 
 with hcol2:
     st.markdown("<h4><u>Merge Page</u></h4>",unsafe_allow_html=True)
-    exp4 = st.expander("Check help note",expanded=False)
+    exp4 = st.expander("Help note",expanded=False)
     exp4.write(''''
     This would help you to merge selected datasets that you imported into one. 
     You may also append datasets if needed
