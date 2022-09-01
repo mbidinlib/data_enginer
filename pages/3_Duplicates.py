@@ -8,7 +8,6 @@ Purpose: Data Engineering
 import streamlit as st
 import pandas as pd
 import numpy as np
-from dill import dump, load
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
@@ -24,7 +23,6 @@ st.sidebar.markdown("# Check Duplicates-")
 
 #Call datasets imported from import
 data1 = st.session_state['df1']
-state._state['data'] = load(df1)
 st.write(data1)
 
 '''
