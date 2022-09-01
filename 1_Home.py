@@ -50,27 +50,66 @@ with st.sidebar.container():
     #st.image(image, width= use_column_width=True)
 
 st.markdown("# MGlory Data Engineering Toolkit ")
+
 st.markdown("""
     Welcome to MGlory Data Engineering toolkit.
     This is a python based tool that would help you prepare your dataset for analysis.
-    The tool contains the following components:
-    - **Data Import**
-    With the data import page, you would be able to import upto five (5) datasets for your work.
+    The tool contains the following components""")
+
+hcol1, hcol2 = st.columns(2)
+
+with hcol1:
+    st.subheader("Data Import")
+    st.markdown('''
+    This page is the starting point where you would be able to import upto five (5) datasets for your work.
     Each dataset is in a seperate tab and you can navigate across tabs
-    - **Check Duplicates**
-    You can check if your data has duplicates using some key variables 
+    ''')
+with hcol2:
+    st.subheader("Duplicates")
+    st.markdown('''
+    This page is would help you check for duplicates in the imported datasets using some key variables 
     and also remove duplicates if there are any
-    - **Check Outliers**
-    You can check if some variables have outliers given a certain multiplier effect
-    - **Merge Data**
+    ''')
+with hcol1:
+    st.subheader("Outliers")
+    st.markdown('''
+    This page is would help you check for outliers in your importd dataset
+    ''')
+
+with hcol2:
+    st.subheader("Merge Data")
+    st.markdown('''
     This would help you to merge selected datasets that you imported into one. 
     You may also append datasets if needed
-    """)
-
-def footer(st):
-    st.write("Developed by [Mathew Bidinlib](https://github.com/mbidinlib/)")
+    ''')
 
 
-def header(st):
-    st.write("This app is free to use")
+# Set the footer
+footer="""<style>
+a:link , a:visited{
+color: blue;
+background-color: transparent;
+text-decoration: underline;
+}
 
+a:hover,  a:active {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: white;
+color: black;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Developed with ❤ by <a style='display: block; text-align: center;' href="https://www.github.com/mbidinlib/" target="_blank">Mathew Bidinlib S</a></p>
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
