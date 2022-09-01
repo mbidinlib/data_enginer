@@ -22,7 +22,7 @@ st.markdown("# Check Duplicates ")
 st.sidebar.markdown("# Check Duplicates-")
 
 #Call datasets imported from import
-data1 = st.session_state['file']
+data1 = st.session_state['df1']
 st.write(data1)
 
 '''
