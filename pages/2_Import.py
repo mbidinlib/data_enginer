@@ -28,7 +28,7 @@ with datatab1:
                 st.session_state["dataset1"] = dataset1.getvalue()
         if "dataset1" in st.session_state:
             st.header("Data overview")  # Give it a header
-            dataset1= st.session_state["dataset1"]
+            df1= st.session_state["dataset1"]
             try:     # CSV            
                 st.dataframe(pd.read_csv(StringIO(df1)))
             except: #xls , not yet finalized
