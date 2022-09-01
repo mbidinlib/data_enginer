@@ -24,15 +24,14 @@ datatab1, datatab2, datatab3, datatab4, datatab5 = st.tabs(["Dataset 1","Dataset
 
 with datatab1:
     st.markdown('Select your data file')
-    if 'df1' not in st.session_state:
-        dfa1 = st.file_uploader("Choose a file",type=['csv', 'xlsx'], key=persist('df1'))
-        if dfa1 is not None:
-            try:
-                df1 = pd.read_csv(dfa1)
-            except Exception as e:
-                print(e)
-                df1 = pd.read_excel(dfa1)
-            st.write(df1)
+    dfa1 = st.file_uploader("Choose a file",type=['csv', 'xlsx'], key=persist('df1'))
+    if dfa1 is not None:
+        try:
+            df1 = pd.read_csv(dfa1)
+        except Exception as e:
+            print(e)
+            df1 = pd.read_excel(dfa1)
+        st.write(df1)
 
 with datatab2:
     st.markdown('Select your data file')
