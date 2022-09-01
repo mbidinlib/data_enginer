@@ -24,7 +24,10 @@ with datatab1:
     with col2:
         st.header("Data overview")
         if dfa1 is not None:
-            st.session_state["dfa1"] = dfa1.getvalue().decode("utf-8")
+            try:
+                st.session_state["dfa1"] = dfa1.getvalue() #.decode("utf-8")
+            except:
+                st.session_state["dfa1"] = dfa1.getvalue()
         if "dfa1" in st.session_state:
             df1= st.session_state["dfa1"]
             try:                

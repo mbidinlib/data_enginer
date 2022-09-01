@@ -16,9 +16,20 @@ import streamlit as st
 st.markdown("# Check Duplicates ")
 st.sidebar.markdown("# Check Duplicates-")
 
-#Call datasets imported from import
-data1 = st.session_state['df1']
-st.write(data1)
+if "dfa1" in st.session_state:
+     df1= st.session_state["dfa1"]
+     select_df = st.selectbox(
+          'Select the dataset you want to check',
+          (df1))
+     try:             
+          st.dataframe(pd.read_csv(StringIO(df1)))
+     except:
+          st.dataframe(pd.read_excel(StringIO(df1)))
+
+     
+
+
+
 
 '''
 if st.session_state['df2'] is not None:
