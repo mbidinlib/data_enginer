@@ -12,6 +12,7 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
+from persist import persist, load_widget_state
 
 #Import pages
 #from streamlit_multipage import MultiPage
