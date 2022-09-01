@@ -27,5 +27,9 @@ with datatab1:
             st.session_state["dfa1"] = dfa1.getvalue().decode("utf-8")
         if "dfa1" in st.session_state:
             df1= st.session_state["dfa1"]
-            st.dataframe(pd.read_csv(StringIO(df1)))
+            try:                
+                st.dataframe(pd.read_csv(StringIO(df1)))
+            except:
+                st.dataframe(pd.read_excel(StringIO(df1)))
+            
 
