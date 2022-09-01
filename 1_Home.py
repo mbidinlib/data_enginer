@@ -37,8 +37,6 @@ body_format = '''
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     </style>
-    </body>
-
     '''
 st.markdown(body_format, unsafe_allow_html=True)
 
