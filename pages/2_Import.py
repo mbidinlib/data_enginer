@@ -13,6 +13,7 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import time as tm
+import dill
 from persist import persist, load_widget_state
 #from streamlit_multipage import MultiPage
 
@@ -32,6 +33,7 @@ with datatab1:
             print(e)
             df1 = pd.read_excel(dfa1)
         st.write(df1)
+    dill.dump(state._state['data'], df1)
 
 with datatab2:
     st.markdown('Select your data file')

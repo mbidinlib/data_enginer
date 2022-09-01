@@ -79,23 +79,3 @@ def footer(st):
 def header(st):
     st.write("This app is free to use")
 
-
-if "page" not in st.session_state:
-    # Initialize session state.
-    st.session_state.update({
-        # Default page.
-        "page": "Home",
-    })
-
-page = st.sidebar.radio("Select your page", tuple(PAGES.keys()), format_func=str.capitalize)
-
-PAGES[page]()
-
-PAGES = {
-    "Home": Home,
-    "Import": Import,
-}
-
-if __name__ == "__main__":
-    load_widget_state()
-    main()
