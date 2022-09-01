@@ -26,9 +26,7 @@ with datatab1:
     st.markdown('Select your data file')
     dfa1 = st.file_uploader("Choose a file", key=persist('df1'))
     if dfa1:
-        if 'pd.read_csv' in st.session.state:
-            df1=st.session_state.pd.read_csv   
-        else:
+        if 'df1'  not in st.session.state:
             try:
                 df1 = pd.read_csv(dfa1)
             except Exception as e:
