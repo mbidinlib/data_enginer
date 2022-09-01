@@ -4,17 +4,13 @@ Date: Wed Aug 23 21:12:18 2022
 @author: Glooory
 Purpose: Data Engineering
 '''
-
 import streamlit as st
+import SessionState
 import pandas as pd
 import numpy as np
-import plotly.express as px
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
 import matplotlib.pyplot as plt
-import time as tm
 from persist import persist, load_widget_state
-#from streamlit_multipage import MultiPage
+from io import StringIO
 
 
 st.markdown("# Import Data ")
@@ -24,16 +20,12 @@ datatab1, datatab2, datatab3, datatab4, datatab5 = st.tabs(["Dataset 1","Dataset
 
 with datatab1:
     st.markdown('Select your data file')
-    dfa1 = st.file_uploader("Choose a file", key=persist('df1'))
+    dfa1 = st.file_uploader("Choose a file",type = "csv", key=persist('df1'))
     if dfa1:
-        if 'df1'  not in st.session.state:
-            try:
-                df1 = pd.read_csv(dfa1)
-            except Exception as e:
-                print(e)
-                df1 = pd.read_excel(dfa1)
-            st.write(df1)
-            
+        if 'df1a' not in st.session.state:
+            st.session_state["dfa1"]= dfa1.getvalue().decode("utf-8")
+        if 'df1a' in st.session.state:
+            st.dataframe(pd.read_csv(StringIO(st.session_state["dfa1"])))           
 with datatab2:
     st.markdown('Select your data file')
     dfa2 = st.file_uploader("Choose a file", key=persist('df2'))
