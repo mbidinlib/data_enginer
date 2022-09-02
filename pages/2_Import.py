@@ -34,10 +34,10 @@ with datatab1:
             dataset1_name = st.text_input("Short name of your dataset (optional)", key="name1")
             if dataset1_name:
                 st.session_state["dataset1_name"] = dataset1_name
-            st.write(st.session_state["dataset1_name"])
-            st.markdown(st.session_state["dataset1_name"])
-            
-                
+            if 'dataset1_name' in st.session_state:
+                st.write(st.session_state["dataset1_name"])
+                st.markdown(st.session_state["dataset1_name"])
+                        
       
     #Column two 
     with col2:
