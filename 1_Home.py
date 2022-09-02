@@ -71,21 +71,21 @@ with hcol1:
 with hcol2:
     st.markdown("<h4><u>Duplicates Page</u></h4>",unsafe_allow_html=True)
     exp2 = st.expander("Help note",expanded=False)
-    exp2.write(''''
+    exp2.write('''
     This page would help you check for duplicates in the imported datasets using some key variables. 
     You would also be able to download duplicate reports and remove duplicates.
     ''')
 with hcol1:
     st.markdown("<h4><u>Outliers Page</u></h4>",unsafe_allow_html=True)
     exp3 = st.expander("Help note",expanded=False)
-    exp3.write(''''
+    exp3.write('''
     This page is would help you check for outliers in your importd dataset
     ''')
 
 with hcol2:
     st.markdown("<h4><u>Merge Page</u></h4>",unsafe_allow_html=True)
     exp4 = st.expander("Help note",expanded=False)
-    exp4.write(''''
+    exp4.write('''
     This would help you to merge selected datasets that you imported. 
     You may also append datasets if needed.
     ''')
