@@ -18,11 +18,55 @@ st.sidebar.markdown("# Check Duplicates-")
 
 if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset3" in st.session_state or 
      "dataset4" in st.session_state or "dataset4" in st.session_state):
+    
+     #Det short name of datasets
+     #############################
 
-     selected_df = st.selectbox(
+     #Dataset 1
+     try:
+          ds1 = st.session_state["daset1_name"]
+     except:
+          ds1 = "dataset1"
+     #Dataset 2
+     try:
+          ds2 = st.session_state["daset2_name"]
+     except:
+          ds2 = "dataset2"
+     #Dataset 3
+     try:
+          ds3 = st.session_state["daset3_name"]
+     except:
+          ds3 = "dataset3"
+     #Dataset 4
+     try:
+          ds4 = st.session_state["daset4_name"]
+     except:
+          ds4 = "dataset4"
+     #Dataset 5
+     try:
+          ds5 = st.session_state["daset5_name"]
+     except:
+          ds5 = "dataset5"
+
+     #Selecting dataset to use
+     ###########################
+     sel_df = st.selectbox(
           'Select the dataset you want to check',
-          ("dataset1", "dataset2", "dataset3", "dataset4", "dataset5"))
+          ("`{ds1}`", "`{ds2}`", "`{ds3}`", "`{ds4}`", "`{ds5}`"))
 
+     if sel_df == ds1 :
+         selected_df = "dataset1" 
+     elif sel_df == ds2:
+          selected_df = "dataset2"
+     elif sel_df == ds3:
+          selected_df = "dataset3"
+     elif sel_df == ds4:
+          selected_df = "dataset4"
+     elif sel_df == ds5:
+          selected_df = "dataset5"
+
+     #Reading selected dataset
+     ##########################
      try:
           dup_data= pd.read_csv(StringIO(st.session_state[selected_df]))             
           st.dataframe(dup_data)

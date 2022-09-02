@@ -22,7 +22,7 @@ with datatab1:
         st.markdown("")
         st.markdown("")
         if "dataset1" in st.session_state:  # Add option to give name
-            st.text_input("Short name of your dataset (optional)")
+            daset1_name = st.text_input("Short name of your dataset (optional)")
 
     #Column two 
     with col2:
@@ -47,6 +47,10 @@ with datatab2:
     with col1:
         st.subheader("Select file")
         dataset2 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data2")
+        st.markdown("")
+        st.markdown("")
+        if "dataset1" in st.session_state:  # Add option to give name
+            daset2_name = st.text_input("Short name of your dataset (optional)")
     #Column two 
     with col2:
         if dataset2 is not None:
