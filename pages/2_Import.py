@@ -32,11 +32,12 @@ with datatab1:
             def cb1 ():
                 if 'dataset1_name' not in st.session_state:
                     st.session_state["dataset1_name"] = dataset1_name
+                nn1 = st.session_state["dataset1_name"]
+                st.write(nn1)
         # Optional short name of dataset        
         if "dataset1" in st.session_state:  # Add option to give name
             dataset1_name = st.text_input("Short name of your dataset (optional)", key="name1", on_change=cb1)
-            if 'dataset1_name' in st.session_state:
-                st.write(st.session_state.dataset1_name)
+                
       
     #Column two 
     with col2:
