@@ -29,11 +29,12 @@ with datatab1:
             except: #Excel
                 st.session_state["dataset1"] = dataset1.getvalue()
 
+            def cb1 ():
+                if 'dataset1_name' not in st.session_state:
+                    st.session_state["dataset1_name"] = dataset1_name
         # Optional short name of dataset        
         if "dataset1" in st.session_state:  # Add option to give name
-            dataset1_name = st.text_input("Short name of your dataset (optional)", key="name1")
-            if 'dataset1_name' not in st.session_state:
-                st.session_state["dataset1_name"] = dataset1_name
+            dataset1_name = st.text_input("Short name of your dataset (optional)", key="name1", on_change=cb1)
             if 'dataset1_name' in st.session_state:
                 st.write(st.session_state.dataset1_name)
       
