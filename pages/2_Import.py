@@ -19,7 +19,10 @@ with datatab1:
     with col1:
         st.subheader("Select file")
         dataset1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data1")
-        st.text_input("Short name of your dataset (optional)")
+        if "dataset1" in st.session_state:  # Add option to give name
+            st.text_input("Short name of your dataset (optional)")
+        if st.button("Clear data in memory"):
+            st.session_state["dataset1"] = None
     #Column two 
     with col2:
         if dataset1 is not None:
