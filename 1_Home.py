@@ -65,15 +65,15 @@ with hcol1:
     st.markdown("<h4><u>Import Page</u></h4>",unsafe_allow_html=True)
     exp1 = st.expander("Help note",expanded=False)
     exp1.write('''
-    This page is the starting point where you would be able to import upto five (5) datasets for your work.
-    Each dataset is in a seperate tab and you can navigate across tabs
+    This page is the starting point where you would be able to import up to five (5) datasets for your work.
+    There is a tab dedicated for each dataset and you can navigate across tabs
     ''')
 with hcol2:
     st.markdown("<h4><u>Duplicates Page</u></h4>",unsafe_allow_html=True)
     exp2 = st.expander("Help note",expanded=False)
     exp2.write(''''
-    This page is would help you check for duplicates in the imported datasets using some key variables 
-    and also remove duplicates if there are any
+    This page would help you check for duplicates in the imported datasets using some key variables. 
+    You would also be able to download duplicate reports and remove duplicates.
     ''')
 with hcol1:
     st.markdown("<h4><u>Outliers Page</u></h4>",unsafe_allow_html=True)
@@ -86,8 +86,8 @@ with hcol2:
     st.markdown("<h4><u>Merge Page</u></h4>",unsafe_allow_html=True)
     exp4 = st.expander("Help note",expanded=False)
     exp4.write(''''
-    This would help you to merge selected datasets that you imported into one. 
-    You may also append datasets if needed
+    This would help you to merge selected datasets that you imported. 
+    You may also append datasets if needed.
     ''')
 
 

@@ -33,7 +33,8 @@ with datatab1:
                 st.dataframe(pd.read_csv(StringIO(df1)))
             except: #xls , not yet finalized
                 #st.dataframe(pd.read_excel(StringIO(df1)))
-                st.markdown("**This file is not a csv file. Support for Other file extensions would be added later**")
+                st.markdown("""**This file is not in csv format. Please select a csv file. 
+                Support for Other file extensions would be added later**""")
 
 with datatab2:
     col1, col2 = st.columns(2) #Split into two columns
@@ -55,4 +56,6 @@ with datatab2:
                 st.dataframe(pd.read_csv(StringIO(df2)))
             except: #xls , not yet finalized
                 #st.dataframe(pd.read_excel(StringIO(df1)))
-                st.markdown("**This file is not a csv file. Support for Other file extensions would be added later**")
+                st.markdown("""**This file is not in csv format. Please select a csv file. 
+                Support for Other file extensions would be added later**""")
+
