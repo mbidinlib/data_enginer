@@ -34,8 +34,7 @@ with datatab1:
             dataset1_name = st.text_input("Short name of your dataset (optional)")
             if dataset1_name is not None:
                 st.session_state["dataset1_name"] = dataset1_name
-            if dataset1_name in st.session.state:
-                st.write("Name: "+ st.session_state["dataset1_name"])
+            st.write("Name: "+ st.session_state["dataset1_name"])
 
     #Column two 
     with col2:
