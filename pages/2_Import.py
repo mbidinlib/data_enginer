@@ -32,8 +32,6 @@ with datatab1:
         # Optional short name of dataset        
         if "dataset1" in st.session_state:  # Add option to give name
             dataset1_name = st.text_input("Short name of your dataset (optional)", key="dataset1_name")
-            if dataset1_name is not None:
-                st.session_state["dataset1_name"] = dataset1_name
             if "dataset1_name" in st.session_state:
                 st.markdown(st.session_state.dataset1_name)
 
