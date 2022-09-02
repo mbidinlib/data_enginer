@@ -10,7 +10,7 @@ import streamlit as st
 
 # Set page outline
 st. set_page_config(layout="wide")
-st.set_page_config(page_title="MGlory Data-Engineering", page_icon="📊")
+#st.set_page_config(page_title="MGlory Data-Engineering", page_icon="📊")
 #Installed programs
 #pip install streamlit-multipage
 
