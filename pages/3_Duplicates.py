@@ -24,27 +24,27 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
 
      #Dataset 1
      try:
-          ds1 = st.session_state["daset1_name"]
+          ds1 = st.session_state["dataset1_name"]
      except:
           ds1 = "dataset1"
      #Dataset 2
      try:
-          ds2 = st.session_state["daset2_name"]
+          ds2 = st.session_state["dataset2_name"]
      except:
           ds2 = "dataset2"
      #Dataset 3
      try:
-          ds3 = st.session_state["daset3_name"]
+          ds3 = st.session_state["dataset3_name"]
      except:
           ds3 = "dataset3"
      #Dataset 4
      try:
-          ds4 = st.session_state["daset4_name"]
+          ds4 = st.session_state["dataset4_name"]
      except:
           ds4 = "dataset4"
      #Dataset 5
      try:
-          ds5 = st.session_state["daset5_name"]
+          ds5 = st.session_state["dataset5_name"]
      except:
           ds5 = "dataset5"
 
