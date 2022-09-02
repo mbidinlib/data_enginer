@@ -52,7 +52,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
      ###########################
      sel_df = st.selectbox(
           'Select the dataset you want to check',
-          ("{ds1}", "{ds2}", "{ds3}", "{ds4}", "{ds5}"))
+          [ds1, ds2, ds3, ds4, ds5])
 
      if sel_df == ds1 :
          selected_df = "dataset1" 
