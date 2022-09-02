@@ -22,8 +22,7 @@ with datatab1:
         st.markdown("")
         if st.button("Clear data in memory"): # Added a clear button
             st.session_state["dataset1"] = ""
-            dataset1 = ""
-        if "dataset1" in st.session_state:  # Add option to give name
+        elif "dataset1" in st.session_state:  # Add option to give name
             st.text_input("Short name of your dataset (optional)")
 
     #Column two 
