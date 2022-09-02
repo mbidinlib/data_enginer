@@ -21,7 +21,15 @@ with datatab1:
         dataset1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data1")
         st.markdown("")
         st.markdown("")
-        # Optional short name of dataset
+        
+        # Preserve session state
+        if dataset1 is not None:
+            try:
+                st.session_state["dataset1"] = dataset1.getvalue().decode("utf-8")
+            except: #Excel
+                st.session_state["dataset1"] = dataset1.getvalue()
+
+        # Optional short name of dataset        
         if "dataset1" in st.session_state:  # Add option to give name
             dataset1_name = st.text_input("Short name of your dataset (optional)")
             if dataset1_name is not None:
@@ -31,11 +39,6 @@ with datatab1:
 
     #Column two 
     with col2:
-        if dataset1 is not None:
-            try:
-                st.session_state["dataset1"] = dataset1.getvalue().decode("utf-8")
-            except: #Excel
-                st.session_state["dataset1"] = dataset1.getvalue()
         if "dataset1" in st.session_state:
             st.header("Data overview")  # Give it a header
             df1= st.session_state["dataset1"]
