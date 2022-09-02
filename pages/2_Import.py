@@ -21,7 +21,8 @@ with datatab1:
         dataset1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data1")
         st.markdown("")
         if st.button("Clear data in memory"): # Added a clear button
-            st.session_state["dataset1"] = None
+            st.session_state["dataset1"] = ""
+            dataset1 = ""
         if "dataset1" in st.session_state:  # Add option to give name
             st.text_input("Short name of your dataset (optional)")
 
