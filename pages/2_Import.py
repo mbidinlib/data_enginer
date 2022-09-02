@@ -33,7 +33,7 @@ with datatab1:
         if "dataset1" in st.session_state:  # Add option to give name
             dataset1_name = st.text_input("Short name of your dataset (optional)", key="name1")
             if "dataset1_name" in st.session_state:
-                st.markdown(st.session_state.dataset1_name)
+                st.markdown(st.session_state.name1)
 
     #Column two 
     with col2:
