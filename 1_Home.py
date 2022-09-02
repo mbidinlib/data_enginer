@@ -15,34 +15,6 @@ st. set_page_config(layout="wide")
 #pip install streamlit-multipage
 
 #Add background color
-body_format = '''
-<style>
-    body {
-        background-color: brown;
-        secondary-background-color:red;
-        }
-    h1 {
-        color: maroon;
-        font-family: Tahoma;
-        font-size: 200%;
-    }
-    h2 {
-        color: #BA4A00;
-        font-family: open sans;
-    }
-    h3 {
-        color: #045106;
-        font-family: oopen sans;
-    }
-    p {
-        font-family: open sans;
-    }    
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    </style>
-    '''
-st.markdown(body_format, unsafe_allow_html=True)
-
 
 #st.sidebar.markdown("# Home page")
 #with st.sidebar.container():
@@ -110,7 +82,7 @@ position: fixed;
 left: 0;
 bottom: 0;
 width: 100%;
-background-color: white;
+background-color: transparent;
 color: black;
 text-align: center;
 }
