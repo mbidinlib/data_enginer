@@ -37,7 +37,7 @@ with datatab1:
         # Optional short name of dataset        
         if "dataset1" in st.session_state:  # Add option to give name
             dataset1_name = st.text_input("Short name of your dataset (optional)", key="name1")
-            st.write(st.session_state["dataset1_name"])
+            st.write(st.session_state["name1"])
             
                 
       
