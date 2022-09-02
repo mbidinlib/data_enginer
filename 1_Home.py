@@ -66,7 +66,7 @@ with hcol2:
 # Set the footer
 footer="""<style>
 a:link , a:visited{
-color: blue;
+color: #D891FC;
 background-color: transparent;
 text-decoration: underline;
 }
@@ -83,12 +83,12 @@ left: 0;
 bottom: 0;
 width: 100%;
 background-color: transparent;
-color: black;
+color: white;
 text-align: center;
 }
 </style>
 <div class="footer">
-<p>Developed with ❤ by <a style='display: block; text-align: center;' href="https://www.github.com/mbidinlib/" target="_blank">Mathew Bidinlib </a></p>
+<p>Developed with ❤ by <a href="https://www.github.com/mbidinlib/" target="_blank">Mathew Bidinlib </a></p>
 </div>
 """
 st.markdown(footer,unsafe_allow_html=True)
