@@ -19,7 +19,7 @@ with datatab1:
     with col1:
         st.subheader("Select file")
         dataset1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data1")
-        st.input("Short name of your dataset (optional)")
+        st.text_input("Short name of your dataset (optional)")
     #Column two 
     with col2:
         if dataset1 is not None:
