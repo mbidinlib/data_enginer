@@ -16,6 +16,8 @@ import streamlit as st
 st.markdown("# Check Duplicates ")
 st.sidebar.markdown("# Check Duplicates-")
 
+col1, col2 = st.columns((1,2))
+
 if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset3" in st.session_state or 
      "dataset4" in st.session_state or "dataset4" in st.session_state):
     
@@ -62,31 +64,31 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
           except:
                ds5 = "dataset5"
 
-     #Selecting dataset to use
-     ###########################
-     sel_df = st.selectbox(
-          'Select the dataset you want to check',
-          [ds1, ds2, ds3, ds4, ds5])
+     with col1:
+          #Selecting dataset to use
+          ###########################
+          sel_df = st.selectbox(
+               'Select the dataset you want to check',
+               [ds1, ds2, ds3, ds4, ds5])
+          if sel_df == ds1 :
+               selected_df = "dataset1" 
+          elif sel_df == ds2:
+               selected_df = "dataset2"
+          elif sel_df == ds3:
+               selected_df = "dataset3"
+          elif sel_df == ds4:
+               selected_df = "dataset4"
+          elif sel_df == ds5:
+               selected_df = "dataset5"
 
-     if sel_df == ds1 :
-         selected_df = "dataset1" 
-     elif sel_df == ds2:
-          selected_df = "dataset2"
-     elif sel_df == ds3:
-          selected_df = "dataset3"
-     elif sel_df == ds4:
-          selected_df = "dataset4"
-     elif sel_df == ds5:
-          selected_df = "dataset5"
-
-     #Reading selected dataset
-     ##########################
-     try:
-          dup_data= pd.read_csv(StringIO(st.session_state[selected_df]))             
-          st.dataframe(dup_data)
-     except Exception as e: # Excel version
-          print(e)
-          #dup_data= pd.read_csv(StringIO(st.session_state["dataset1"]))             
+          #Reading selected dataset
+          ##########################
+          try:
+               dup_data= pd.read_csv(StringIO(st.session_state[selected_df]))             
+               st.dataframe(dup_data)
+          except Exception as e: # Excel version
+               print(e)
+               #dup_data= pd.read_csv(StringIO(st.session_state["dataset1"]))             
      
 if "dataset1" not in st.session_state or "dataset2" not in st.session_state:
      st.markdown("Go to the import page to import your dataset(s)")

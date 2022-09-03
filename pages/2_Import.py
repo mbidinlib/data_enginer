@@ -18,7 +18,7 @@ datatab1, datatab2, datatab3, datatab4, datatab5 = st.tabs(["Dataset 1","Dataset
 ##################
 
 with datatab1:
-    col1, col2 = st.columns(2) #Split into two columns
+    col1, col2 = st.columns((1,2)) #Split into two columns
     #Column one
     with col1:
         st.subheader("Select file")
@@ -58,7 +58,7 @@ with datatab1:
 # Dataset 2 tab
 ##################
 with datatab2:
-    col1, col2 = st.columns(2) #Split into two columns
+    col1, col2 = st.columns((1,2)) #Split into two columns
     #Column one
     with col1:
         st.subheader("Select file")
@@ -98,7 +98,7 @@ with datatab2:
 # Dataset 3 tab
 ##################
 with datatab3:
-    col1, col2 = st.columns(2) #Split into two columns
+    col1, col2 = st.columns((1,2)) #Split into two columns
     #Column one
     with col1:
         st.subheader("Select file")
@@ -138,7 +138,7 @@ with datatab3:
 # Dataset 4 tab
 ##################
 with datatab4:
-    col1, col2 = st.columns(2) #Split into two columns
+    col1, col2 = st.columns((1,2)) #Split into two columns
     #Column one
     with col1:
         st.subheader("Select file")
@@ -155,7 +155,7 @@ with datatab4:
 
         # Optional short name of dataset        
         if "dataset4" in st.session_state:  # Add option to give name
-            dataset4_name = st.text_input("Short name of your dataset (optional). The default is *dataset3*", key="name4")
+            dataset4_name = st.text_input("Short name of your dataset (optional). The default is *dataset4*", key="name4")
             if dataset4_name:
                 st.session_state["dataset4_name"] = dataset4_name
             if 'dataset4_name' in st.session_state:
@@ -178,7 +178,7 @@ with datatab4:
 # Dataset 5 tab
 ##################
 with datatab5:
-    col1, col2 = st.columns(2) #Split into two columns
+    col1, col2 = st.columns((1,2)) #Split into two columns
     #Column one
     with col1:
         st.subheader("Select file")
