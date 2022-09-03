@@ -48,7 +48,7 @@ with datatab1:
             st.header("Data overview")  # Give it a header
             df1= st.session_state["dataset1"]
             try:     # CSV            
-                st.dataframe(pd.read_csv(StringIO(df1)))
+                st.dataframe(pd.read_csv(StringIO(df1)),low_memory=False)
             except: #xls , not yet finalized
                 #st.dataframe(pd.read_excel(StringIO(df1)))
                 st.markdown("""**This file is not in csv format. Please select a csv file. 
@@ -88,7 +88,7 @@ with datatab2:
             st.header("Data overview")  # Give it a header
             df2= st.session_state["dataset2"]
             try:     # CSV            
-                st.dataframe(pd.read_csv(StringIO(df2)))
+                st.dataframe(pd.read_csv(StringIO(df2)),low_memory=False)
             except: #xls , not yet finalized
                 #st.dataframe(pd.read_excel(StringIO(df1)))
                 st.markdown("""**This file is not in csv format. Please select a csv file. 
@@ -128,7 +128,7 @@ with datatab3:
             st.header("Data overview")  # Give it a header
             df3= st.session_state["dataset3"]
             try:     # CSV            
-                st.dataframe(pd.read_csv(StringIO(df3)))
+                st.dataframe(pd.read_csv(StringIO(df3)),low_memory=False)
             except: #xls , not yet finalized
                 #st.dataframe(pd.read_excel(StringIO(df1)))
                 st.markdown("""**This file is not in csv format. Please select a csv file. 
@@ -168,7 +168,7 @@ with datatab4:
             st.header("Data overview")  # Give it a header
             df4= st.session_state["dataset4"]
             try:     # CSV            
-                st.dataframe(pd.read_csv(StringIO(df4)))
+                st.dataframe(pd.read_csv(StringIO(df4)),low_memory=False)
             except: #xls , not yet finalized
                 #st.dataframe(pd.read_excel(StringIO(df1)))
                 st.markdown("""**This file is not in csv format. Please select a csv file. 
@@ -208,7 +208,7 @@ with datatab5:
             st.header("Data overview")  # Give it a header
             df5= st.session_state["dataset5"]
             try:     # CSV            
-                st.dataframe(pd.read_csv(StringIO(df5)))
+                st.dataframe(pd.read_csv(StringIO(df5)),low_memory=False)
             except: #xls , not yet finalized
                 #st.dataframe(pd.read_excel(StringIO(df1)))
                 st.markdown("""**This file is not in csv format. Please select a csv file. 
