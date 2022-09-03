@@ -83,6 +83,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
 
           #Reading selected dataset
           ##########################
+     with col2:
           try:
                dup_data= pd.read_csv(StringIO(st.session_state[selected_df]))             
                st.dataframe(dup_data)
