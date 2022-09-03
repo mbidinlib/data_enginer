@@ -81,15 +81,19 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
           elif sel_df == ds5:
                selected_df = "dataset5"
 
-          #Reading selected dataset
-          ##########################
+          with st.expander("Check Duplicates",expanded=False):
+               try:
+                    dup_data= pd.read_csv(StringIO(st.session_state[selected_df]))             
+                    #st.dataframe(dup_data)
+               except Exception as e: # Excel version
+                    print(e)
+               dup_data_vars = dup_data.columns
+               options = st.multiselect(dup_data_vars)
+
+     #Column 2
+     ##########################
      with col2: 
-          try:
-               dup_data= pd.read_csv(StringIO(st.session_state[selected_df]))             
-               st.dataframe(dup_data)
-          except Exception as e: # Excel version
-               print(e)
-               #dup_data= pd.read_csv(StringIO(st.session_state["dataset1"]))             
+               dup_data= pd.read_csv(StringIO(st.session_state["dataset1"]))             
      
 if "dataset1" not in st.session_state or "dataset2" not in st.session_state:
      st.markdown("Go to the import page to import your dataset(s)")
