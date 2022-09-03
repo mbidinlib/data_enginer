@@ -29,7 +29,7 @@ with datatab1:
         # Preserve session state for selected file
         if dataset1 is not None:
             try:
-                st.session_state["dataset1"] = dataset1.getvalue().decode("utf-8")
+                st.session_state["dataset1"] = dataset1.getvalue() #.decode("utf-8")
             except: #Excel
                 st.session_state["dataset1"] = dataset1.getvalue()
 
