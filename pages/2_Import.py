@@ -29,7 +29,7 @@ with datatab1:
         # Preserve session state for selected file
         if dataset1 is not None:
             try:
-                st.session_state["dataset1"] = dataset1 #.getvalue() #.decode("utf-8")
+                st.session_state["dataset1"] = dataset1.getvalue().decode("utf-8")
             except: #Excel
                 st.session_state["dataset1"] = dataset1.getvalue()
 
@@ -48,7 +48,7 @@ with datatab1:
             st.header("Data overview")  # Give it a header
             df1= st.session_state["dataset1"]
             try:     # CSV            
-                st.dataframe(pd.read_csv((df1)),low_memory=False)
+                st.dataframe(pd.read_csv(StringIO(df1)),dtype='unicode')
             except: #xls , not yet finalized
                 #st.dataframe(pd.read_excel(StringIO(df1)))
                 st.markdown("""**This file is not in csv format. Please select a csv file. 
