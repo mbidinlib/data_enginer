@@ -86,7 +86,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                     dup_data= pd.read_csv(StringIO(st.session_state[selected_df]))             
                     #st.dataframe(dup_data)
                except Exception as e: # Excel version
-                    print(e)
+                    dup_data = ""
                dup_data_vars = dup_data.columns
                options = st.multiselect(dup_data_vars)
 
