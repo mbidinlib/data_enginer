@@ -30,6 +30,7 @@ with datatab1:
         if dataset1 is not None:
             try:
                 st.session_state["dataset1"] = dataset1.getvalue().decode("utf-8")
+                a = dataset1.name
             except: #Excel
                 st.session_state["dataset1"] = dataset1.getvalue()
 
@@ -40,7 +41,8 @@ with datatab1:
                 st.session_state["dataset1_name"] = dataset1_name
             if 'dataset1_name' in st.session_state:
                 #st.write(st.session_state["dataset1_name"])
-                st.markdown(st.session_state["dataset1_name"])            
+                st.markdown(st.session_state["dataset1_name"])   
+                st.write(a)         
       
     #Column two 
     with col2:
