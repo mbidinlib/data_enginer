@@ -28,11 +28,7 @@ with datatab1:
         
         # Preserve session state for selected file
         if dataset1 is not None:
-            try:
-                st.session_state["dataset1"] = dataset1 #.getvalue().decode("utf-8")
-                a = dataset1.name
-            except: #Excel
-                st.session_state["dataset1"] = dataset1 #.getvalue()
+            st.session_state["dataset1"] = dataset1 #.getvalue().decode("utf-8")
 
         # Optional short name of dataset        
         if "dataset1" in st.session_state:  # Add option to give name
@@ -42,7 +38,6 @@ with datatab1:
             if 'dataset1_name' in st.session_state:
                 #st.write(st.session_state["dataset1_name"])
                 st.markdown(st.session_state["dataset1_name"])   
-                st.write(a)         
       
     #Column two 
     with col2:
