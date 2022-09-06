@@ -83,10 +83,10 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
 
           with st.expander("Check Duplicates",expanded=False):
                try:
-                    dup_data= pd.read_csv(StringIO(st.session_state[selected_df]))             
+                    dup_data= pd.read_csv(st.session_state[selected_df], dtype='unicode')             
                     #st.dataframe(dup_data)
-               except Exception as e: # Excel version
-                    dup_data = ""
+               except: 
+                    dup_data= pd.read_excel(st.session_state[selected_df])
                dup_data_vars = dup_data.columns
                options = st.multiselect(dup_data_vars)
 

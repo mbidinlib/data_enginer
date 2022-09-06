@@ -53,8 +53,8 @@ with datatab1:
                 st.dataframe(pd.read_csv(df1,dtype='unicode')) ### Remove
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove
             except: #xls , not yet finalized
-                #st.dataframe(pd.read_excel(StringIO(df1)))
-                st.markdown("""**This file is not in csv format. Please select a csv file. 
+                st.dataframe(pd.read_excel(df1))
+                st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
                 Support for Other file extensions would be added later**""")
 
 ##################
@@ -71,11 +71,7 @@ with datatab2:
         
         # Preserve session state for selected file
         if dataset2 is not None:
-            try:
-                st.session_state["dataset2"] = dataset2.getvalue().decode("utf-8")
-            except: #Excel
-                st.session_state["dataset2"] = dataset2.getvalue()
-
+            st.session_state["dataset2"] = dataset2 #.getvalue().decode("utf-8")
         # Optional short name of dataset        
         if "dataset2" in st.session_state:  # Add option to give name
             dataset2_name = st.text_input("Short name of your dataset (optional). The default is *dataset2*", key="name2")
@@ -89,12 +85,12 @@ with datatab2:
     with col2:
         if "dataset2" in st.session_state:
             st.header("Data overview")  # Give it a header
-            df2= st.session_state["dataset2"]
+            df2 = st.session_state["dataset2"]
             try:     # CSV            
-                st.dataframe(pd.read_csv(StringIO(df2)),low_memory=False)
+                st.dataframe(pd.read_csv(df2,dtype='unicode'))
             except: #xls , not yet finalized
-                #st.dataframe(pd.read_excel(StringIO(df1)))
-                st.markdown("""**This file is not in csv format. Please select a csv file. 
+                st.dataframe(pd.read_excel(df1))
+                st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
                 Support for Other file extensions would be added later**""")
 
 ##################
@@ -111,11 +107,7 @@ with datatab3:
         
         # Preserve session state for selected file
         if dataset3 is not None:
-            try:
-                st.session_state["dataset3"] = dataset3.getvalue().decode("utf-8")
-            except: #Excel
-                st.session_state["dataset3"] = dataset3.getvalue()
-
+            st.session_state["dataset3"] = dataset3 #.getvalue().decode("utf-8")
         # Optional short name of dataset        
         if "dataset3" in st.session_state:  # Add option to give name
             dataset3_name = st.text_input("Short name of your dataset (optional). The default is *dataset3*", key="name3")
@@ -131,10 +123,10 @@ with datatab3:
             st.header("Data overview")  # Give it a header
             df3= st.session_state["dataset3"]
             try:     # CSV            
-                st.dataframe(pd.read_csv(StringIO(df3)),low_memory=False)
+                st.dataframe(pd.read_csv(df3,dtype='unicode'))
             except: #xls , not yet finalized
-                #st.dataframe(pd.read_excel(StringIO(df1)))
-                st.markdown("""**This file is not in csv format. Please select a csv file. 
+                st.dataframe(pd.read_excel(df1))
+                st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
                 Support for Other file extensions would be added later**""")
 
 ##################
@@ -151,10 +143,7 @@ with datatab4:
         
         # Preserve session state for selected file
         if dataset4 is not None:
-            try:
-                st.session_state["dataset4"] = dataset3.getvalue().decode("utf-8")
-            except: #Excel
-                st.session_state["dataset4"] = dataset3.getvalue()
+            st.session_state["dataset4"] = dataset4
 
         # Optional short name of dataset        
         if "dataset4" in st.session_state:  # Add option to give name
@@ -171,9 +160,9 @@ with datatab4:
             st.header("Data overview")  # Give it a header
             df4= st.session_state["dataset4"]
             try:     # CSV            
-                st.dataframe(pd.read_csv(StringIO(df4)),low_memory=False)
+                st.dataframe(pd.read_csv(df4,dtype='unicode'))
             except: #xls , not yet finalized
-                #st.dataframe(pd.read_excel(StringIO(df1)))
+                st.dataframe(pd.read_excel(df1))
                 st.markdown("""**This file is not in csv format. Please select a csv file. 
                 Support for Other file extensions would be added later**""")
 
@@ -191,10 +180,7 @@ with datatab5:
         
         # Preserve session state for selected file
         if dataset5 is not None:
-            try:
-                st.session_state["dataset5"] = dataset5.getvalue().decode("utf-8")
-            except: #Excel
-                st.session_state["dataset5"] = dataset5.getvalue()
+            st.session_state["dataset5"] = dataset5 #.getvalue().decode("utf-8")
 
         # Optional short name of dataset        
         if "dataset5" in st.session_state:  # Add option to give name
@@ -211,8 +197,8 @@ with datatab5:
             st.header("Data overview")  # Give it a header
             df5= st.session_state["dataset5"]
             try:     # CSV            
-                st.dataframe(pd.read_csv(StringIO(df5)),low_memory=False)
+                st.dataframe(pd.read_csv(df5, dtype='unicode'))
             except: #xls , not yet finalized
-                #st.dataframe(pd.read_excel(StringIO(df1)))
+                st.dataframe(pd.read_excel(df1))
                 st.markdown("""**This file is not in csv format. Please select a csv file. 
                 Support for Other file extensions would be added later**""")
