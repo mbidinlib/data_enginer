@@ -48,8 +48,7 @@ with datatab1:
                 st.dataframe(pd.read_csv(df1,dtype='unicode')) ### Remove
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove
             except: #xls , not yet finalized
-                edf1 = pd.ExcelFile(df1)
-                st.dataframe(pd.read_excel(edf1))
+                st.dataframe(pd.read_excel(df1))
                 st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
                 Support for Other file extensions would be added later**""")
 
