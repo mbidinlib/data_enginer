@@ -82,15 +82,16 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
           elif sel_df == ds5:
                selected_df = "dataset5"
 
-          seldata = st.session_state[selected_df]
 
-          # Check duplicates
-          ##################
-          with st.expander("Check Duplicates",expanded=False):
-               
-               if sel_df != "":
-                    dup_data_vars = seldata.columns
-                    options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
+          if sel_df != "":
+               seldata = st.session_state[selected_df]
+
+               # Check duplicates
+               ##################
+               with st.expander("Check Duplicates",expanded=False):
+
+                         dup_data_vars = seldata.columns
+                         options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
 
 
 
