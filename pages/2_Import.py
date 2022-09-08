@@ -48,6 +48,8 @@ with datatab1:
         if "ds1" in st.session_state:
             st.header("Data overview")  # Give it a header
             df1= st.session_state["ds1"]
+            file_ext1 = df1.name.split('.')[-1]
+            st.markdown(file_ext1)
             try:     # CSV            
                 dataset1 = pd.read_csv(df1,dtype='unicode')
                 st.dataframe(dataset1) 
