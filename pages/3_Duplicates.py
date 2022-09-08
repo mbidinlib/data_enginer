@@ -96,10 +96,13 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                               # Query duplicates:
                               dup_data = master_data[master_data.duplicated(dup_key, keep = False)]
                               
+                              
                               # Add buttons
                               reportdups = st.button('Duplicates Report', key= 'reportdups')
                               viewdups = st.button(' View Duplicates', key= 'vewdups')
-                              st.download_button(label = 'Export duplicates', data = dup_data, 
+
+                              dup_data_down = dup_data.to_excel()
+                              st.download_button(label = 'Export duplicates', data = dup_data_down, 
                                    file_name = 'duplicates.xlsx', mime = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')      
 
                with st.expander("Resolve Duplicates",expanded=False):
