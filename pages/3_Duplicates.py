@@ -96,8 +96,9 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
           with st.expander("Check Duplicates",expanded=False):
                
                if sel_df:
-                    dup_data_vars = dup_data.columns
-                    options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
+                    st.markdown(sel_df)
+                    #dup_data_vars = dup_data.columns
+                    #options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
 
 
 
