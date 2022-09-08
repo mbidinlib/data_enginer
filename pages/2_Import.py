@@ -49,6 +49,8 @@ with datatab1:
         if "dataset1" in st.session_state:
             st.header("Data overview")  # Give it a header
             df1= st.session_state["dataset1"]
+            
+            #Get the file extension of selected file
             file_path1 = Path(df1)
             file_extension1 = file_path1.suffix.lower()[1:]
 
