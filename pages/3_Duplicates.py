@@ -84,41 +84,42 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
 
 
           if sel_df != "":
-               seldata = st.session_state[selected_df]
+               master_data = st.session_state[selected_df]
 
                # Check duplicates
                ##################
                with st.expander("Check Duplicates",expanded=False):
-                         dup_data_vars = seldata.columns
-                         options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
-                         if options:
+                         dup_data_vars = master_data.columns
+                         dup_key = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
+                         if dup_key:
 
+                              # Query duplicates:
+                              dup_data = master_data[master_data.duplicated(dup_key, keep = False)]
+                              
                               # Add buttons
                               reportdups = st.button('Duplicates Report', key= 'reportdups')
                               viewdups = st.button('View  Duplicates', key= 'vewdups')
                               exportdups = st.button('Export Duplicates', key= 'exportdups')
 
-                              if reportdups:
-                                   st.markdown("There is nothing to Report on")
-                              if viewdups:
-                                   st.markdown("There is nothing to view")  
-                              if exportdups:
-                                   st.markdown("There is nothing to Export")
-
-
                with st.expander("Resolve Duplicates",expanded=False):
-                         dup_data_vars = seldata.columns
-                         dupvars = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars, key='dupvars')
+                         dup_data_vars = master_data.columns
+                         #dupvars = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars, key='dupvars')
 
 
 
 
      #Column 2
      ##########################
-     with col2: 
-          if sel_df != "":
+     with col2:
+
+          if reportdups:
+               st.markdown("There is nothing to Report on")
+          elif viewdups or exportdups:
+               st.markdown("Duplicate based on: " + dup_key) 
+               st.dataframe(dup_data) 
+          elif sel_df != "":
                st.markdown("Selected Dataset")
-               st.dataframe(seldata)            
+               st.dataframe(master_data)            
 
 
 # When No data has been inported
