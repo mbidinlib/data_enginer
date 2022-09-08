@@ -89,15 +89,16 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                     #st.dataframe(dup_data)
                except:
                     dup_data= pd.read_excel(seldata).astype(str)
-               #dup_data_vars = dup_data.columns
-               #options = st.multiselect(dup_data_vars)
+               dup_data_vars = dup_data.columns
+               options = st.multiselect(dup_data_vars)
 
 
 
      #Column 2
      ##########################
      with col2: 
-              st.dataframe(dup_data)            
+          if sel_df:
+               st.dataframe(dup_data)            
 
 
 # When No data has been inported
