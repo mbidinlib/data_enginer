@@ -8,6 +8,7 @@ Purpose: Data Engineering
 from io import StringIO
 import pandas as pd
 import streamlit as st
+from st_btn_select import st_btn_select     # USed to add customised buttons side by side
 
 # Options for excel imports
 import pip
@@ -91,10 +92,12 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                with st.expander("Check Duplicates",expanded=False):
                          dup_data_vars = seldata.columns
                          options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
+                         
                          if options:
-                              viewdups = st.button('View Duplicates', key= 'vewdups')
-                              if viewdups:
-                                   st.markdown("There is nothing to view")
+                              dup_action = st_btn_select( ('Duplicates Report','View Duplicates', 'Export Duplicates'),
+                              nav=True,)
+                              if dup_action == 'Duplicates Report':
+                                   st.write('You want to view duplicates')
 
                with st.expander("Resolve Duplicates",expanded=False):
                          dup_data_vars = seldata.columns
