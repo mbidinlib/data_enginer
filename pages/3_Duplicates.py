@@ -87,7 +87,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                     dup_data= pd.read_csv(st.session_state[selected_df], dtype='unicode')             
                     #st.dataframe(dup_data)
                except:
-                    dup_data= pd.read_excel(st.session_state[selected_df].astype(str))
+                    dup_data= pd.read_excel(st.session_state[selected_df]).astype(str)
                #dup_data_vars = dup_data.columns
                #options = st.multiselect(dup_data_vars)
 
