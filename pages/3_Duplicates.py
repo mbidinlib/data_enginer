@@ -9,7 +9,6 @@ from io import StringIO
 import pandas as pd
 import streamlit as st
 from io import BytesIO
-from pyxlsb import open_workbook as open_xlsb
 
 # Options for excel imports
 import pip
