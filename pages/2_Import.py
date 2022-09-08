@@ -26,7 +26,7 @@ with datatab1:
     #Column one
     with col1:
         st.subheader("Select file")
-        dataset1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data1")
+        dataset1 = st.file_uploader("Select Data file(.xlsx/csv)", type=["csv", 'xlsx','xls'], key = "data1")
         st.markdown("")
         st.markdown("")
         
@@ -54,8 +54,6 @@ with datatab1:
             except: #xls , not yet finalized
                 frame1= st.dataframe(pd.read_excel(df1).astype(str))
                 #st.dataframe(pd.read_excel(df1))
-                #st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
-                #Support for Other file extensions would be added later**""")
 
 ##################
 # Dataset 2 tab
@@ -65,7 +63,7 @@ with datatab2:
     #Column one
     with col1:
         st.subheader("Select file")
-        dataset2 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data2")
+        dataset2 = st.file_uploader("Select Data file(.xlsx/csv)", type=["csv", 'xlsx','xls'], key = "data2")
         st.markdown("")
         st.markdown("")
         
@@ -101,7 +99,7 @@ with datatab3:
     #Column one
     with col1:
         st.subheader("Select file")
-        dataset3 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data3")
+        dataset3 = st.file_uploader("Select Data file(.xlsx/csv)", type=["csv", 'xlsx','xls'], key = "data3")
         st.markdown("")
         st.markdown("")
         
@@ -137,7 +135,7 @@ with datatab4:
     #Column one
     with col1:
         st.subheader("Select file")
-        dataset4 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data4")
+        dataset4 = st.file_uploader("Select Data file(.xlsx/csv)", type=["csv", 'xlsx','xls'], key = "data4")
         st.markdown("")
         st.markdown("")
         
@@ -174,7 +172,7 @@ with datatab5:
     #Column one
     with col1:
         st.subheader("Select file")
-        dataset5 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data5")
+        dataset5 = st.file_uploader("Select Data file(.xlsx/csv)", type=["csv", 'xlsx','xls'], key = "data5")
         st.markdown("")
         st.markdown("")
         
