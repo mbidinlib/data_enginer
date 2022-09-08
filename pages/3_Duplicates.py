@@ -92,7 +92,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                          dup_data_vars = seldata.columns
                          options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
                          if options:
-                              viewdups = st.button('View Duplicates', key= 'vewdups'):
+                              viewdups = st.button('View Duplicates', key= 'vewdups')
                               if viewdups:
                                    st.markdown("There is nothing to view")
 
