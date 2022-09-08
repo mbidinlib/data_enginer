@@ -88,7 +88,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
           ##################
           with st.expander("Check Duplicates",expanded=False):
                
-               if seldata:
+               if sel_df != "":
                     dup_data_vars = seldata.columns
                     options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
 
@@ -97,7 +97,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
      #Column 2
      ##########################
      with col2: 
-          if seldata:
+          if sel_df != "":
                st.dataframe(seldata)            
 
 
