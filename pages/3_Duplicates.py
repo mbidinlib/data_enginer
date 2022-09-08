@@ -107,7 +107,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
      with col2: 
           if sel_df:
                st.markdown("Selected data")
-               st.dataframe(dup_data)            
+               #st.dataframe(dup_data)            
 
 
 # When No data has been inported
