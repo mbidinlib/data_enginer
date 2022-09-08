@@ -8,6 +8,7 @@ Purpose: Data Engineering
 from io import StringIO
 import pandas as pd
 import streamlit as st
+import io
 
 # Options for excel imports
 import pip
@@ -100,9 +101,15 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                               # Add buttons
                               reportdups = st.button('Duplicates Report', key= 'reportdups')
                               viewdups = st.button(' View Duplicates', key= 'vewdups')
+                              
+                              dup_down = io.BytesIO()
+
+                              # Create a Pandas Excel writer using XlsxWriter as the engine.
+                              with pd.ExcelWriter(dup_down, engine='xlsxwriter') as writer:
+                                   writer.save()
 
                               dup_data_down = dup_data.to_excel()
-                              st.download_button(label = 'Export duplicates', data = dup_data_down, 
+                              st.download_button(label = 'Export duplicates', data = dup_down, 
                                    file_name = 'duplicates.xlsx', mime = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')      
 
                with st.expander("Resolve Duplicates",expanded=False):
