@@ -7,7 +7,6 @@ Purpose: Data Engineering
 from io import StringIO
 import pandas as pd
 import streamlit as st
-from pathlib import Path
 
 # Options for excel imports
 import pip
@@ -27,7 +26,7 @@ with datatab1:
     #Column one
     with col1:
         st.subheader("Select file")
-        dataset1 = st.file_uploader("Select Data file(.xlsx/csv)", type=["csv", 'xlsx','xls'], key = "data1")
+        dataset1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data1")
         st.markdown("")
         st.markdown("")
         
@@ -49,19 +48,14 @@ with datatab1:
         if "dataset1" in st.session_state:
             st.header("Data overview")  # Give it a header
             df1= st.session_state["dataset1"]
-            
-            #Get the file extension of selected file
-            file_path1 = Path(df1)
-            file_extension1 = file_path1.suffix.lower()[1:]
-
-            if file_extension1 == 'csv':
-                frame1 = st.dataframe(pd.read_csv(df1,dtype='unicode')) 
+            try:     # CSV            
+                st.dataframe(pd.read_csv(df1,dtype='unicode')) 
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove                           
-            elif file_extension1 == 'xlsx' or file_extension1 == 'xls':
-                frame1= st.dataframe(pd.read_excel(df1).astype(str))
+            except: #xls , not yet finalized
+                st.dataframe(pd.read_excel(df1).astype(str))
                 #st.dataframe(pd.read_excel(df1))
-            else:
-                st.markdown("Please select a csv or excel file types. Support for other file types would be added later")
+                #st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
+                #Support for Other file extensions would be added later**""")
 
 ##################
 # Dataset 2 tab
@@ -71,7 +65,7 @@ with datatab2:
     #Column one
     with col1:
         st.subheader("Select file")
-        dataset2 = st.file_uploader("Select Data file(.xlsx/csv)", type=["csv", 'xlsx','xls'], key = "data2")
+        dataset2 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data2")
         st.markdown("")
         st.markdown("")
         
@@ -95,7 +89,9 @@ with datatab2:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df2,dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df2).astype(str))
+                st.dataframe(pd.read_excel(df1))
+                st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
+                Support for Other file extensions would be added later**""")
 
 ##################
 # Dataset 3 tab
@@ -105,7 +101,7 @@ with datatab3:
     #Column one
     with col1:
         st.subheader("Select file")
-        dataset3 = st.file_uploader("Select Data file(.xlsx/csv)", type=["csv", 'xlsx','xls'], key = "data3")
+        dataset3 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data3")
         st.markdown("")
         st.markdown("")
         
@@ -129,7 +125,9 @@ with datatab3:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df3,dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df3).astype(str))
+                st.dataframe(pd.read_excel(df1))
+                st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
+                Support for Other file extensions would be added later**""")
 
 ##################
 # Dataset 4 tab
@@ -139,7 +137,7 @@ with datatab4:
     #Column one
     with col1:
         st.subheader("Select file")
-        dataset4 = st.file_uploader("Select Data file(.xlsx/csv)", type=["csv", 'xlsx','xls'], key = "data4")
+        dataset4 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data4")
         st.markdown("")
         st.markdown("")
         
@@ -164,7 +162,9 @@ with datatab4:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df4,dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df4).astype(str))
+                st.dataframe(pd.read_excel(df1))
+                st.markdown("""**This file is not in csv format. Please select a csv file. 
+                Support for Other file extensions would be added later**""")
 
 ##################
 # Dataset 5 tab
@@ -174,7 +174,7 @@ with datatab5:
     #Column one
     with col1:
         st.subheader("Select file")
-        dataset5 = st.file_uploader("Select Data file(.xlsx/csv)", type=["csv", 'xlsx','xls'], key = "data5")
+        dataset5 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data5")
         st.markdown("")
         st.markdown("")
         
@@ -199,4 +199,6 @@ with datatab5:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df5, dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df5).astype(str))
+                st.dataframe(pd.read_excel(df1))
+                st.markdown("""**This file is not in csv format. Please select a csv file. 
+                Support for Other file extensions would be added later**""")
