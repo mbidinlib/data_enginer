@@ -115,8 +115,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
           if reportdups:
                st.markdown("There is nothing to Report on")
           elif viewdups or exportdups:
-               st.markdown("Duplicate based on:") 
-               st.markdown(dup_key) 
+               st.markdown("Duplicate based on: {dup_key}") 
                st.dataframe(dup_data) 
           elif sel_df != "":
                st.markdown("Selected Dataset")
