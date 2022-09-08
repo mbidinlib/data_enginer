@@ -9,6 +9,7 @@ from io import StringIO
 import pandas as pd
 import streamlit as st
 from io import BytesIO
+from pyxlsb import open_workbook as open_xlsb
 
 # Options for excel imports
 import pip
@@ -100,12 +101,21 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                               # Add buttons
                               reportdups = st.button('Duplicates Report', key= 'reportdups')
                               viewdups = st.button(' View Duplicates', key= 'vewdups')
-                              st.download_button(
-                                             label="Export Duplicates",
-                                             data=dup_data,
-                                             file_name="Duplicates.xlsx",
-                                             mime="application/vnd.ms-excel")
-
+                              def to_excel(df):
+                                   output = BytesIO()
+                                   writer = pd.ExcelWriter(output, engine='xlsxwriter')
+                                   df.to_excel(writer, index=False, sheet_name='duplicates')
+                                   #workbook = writer.book
+                                   #worksheet = writer.sheets['Sheet1']
+                                   #format1 = workbook.add_format({'num_format': '0.00'}) 
+                                   #worksheet.set_column('A:A', None, format1)  
+                                   writer.save()
+                                   processed_data = output.getvalue()
+                                   return processed_data
+                              df_xlsx = to_excel(dup_data)
+                              st.download_button(label='📥 Export Duplicates',
+                                                            data=df_xlsx ,
+                                                            file_name= 'duplicates.xlsx')
 
                with st.expander("Resolve Duplicates",expanded=False):
                          dup_data_vars = master_data.columns
@@ -119,7 +129,10 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
      with col2:
 
           if sel_df != "":
-               if dup_key and (reportdups or viewdups ):
+               if dup_key and reportdups:
+                    st.markdown(f"""Duplicates based on : <b><font style="color:#D9B604">{dup_key}</font></b>""",  
+                    unsafe_allow_html=True)
+               elif dup_key and (viewdups or exportdups):
                     st.markdown(f"""Duplicates based on : <b><font style="color:#D9B604">{dup_key}</font></b>""",  
                     unsafe_allow_html=True)
                     st.dataframe(dup_data)   # display duplicates data
