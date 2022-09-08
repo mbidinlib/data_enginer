@@ -89,9 +89,7 @@ with datatab2:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df2,dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df1))
-                st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
-                Support for Other file extensions would be added later**""")
+                st.dataframe(pd.read_excel(df2, engine='openpyxl').astype(str))
 
 ##################
 # Dataset 3 tab
@@ -125,9 +123,7 @@ with datatab3:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df3,dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df1))
-                st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
-                Support for Other file extensions would be added later**""")
+                st.dataframe(pd.read_excel(df3, engine='openpyxl').astype(str))
 
 ##################
 # Dataset 4 tab
@@ -162,9 +158,7 @@ with datatab4:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df4,dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df1))
-                st.markdown("""**This file is not in csv format. Please select a csv file. 
-                Support for Other file extensions would be added later**""")
+                st.dataframe(pd.read_excel(df4, engine='openpyxl').astype(str))
 
 ##################
 # Dataset 5 tab
@@ -199,6 +193,4 @@ with datatab5:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df5, dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df1))
-                st.markdown("""**This file is not in csv format. Please select a csv file. 
-                Support for Other file extensions would be added later**""")
+                st.dataframe(pd.read_excel(df5, engine='openpyxl').astype(str))
