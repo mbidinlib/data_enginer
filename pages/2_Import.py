@@ -49,8 +49,9 @@ with datatab1:
             st.header("Data overview")  # Give it a header
             df1= st.session_state["ds1"]
             file_ext1 = df1.name.split('.')[-1]  # get file extension of selected file
-         
-            if file_ext1 == 'csv': 
+            st.markdown(file_ext1) # remove
+
+            if file_ext1 == 'csv':
                dataset1 = pd.read_csv(df1,dtype='unicode')
                st.dataframe(dataset1) 
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove                           
