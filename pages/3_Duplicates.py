@@ -8,6 +8,8 @@ Purpose: Data Engineering
 from io import StringIO
 import pandas as pd
 import streamlit as st
+from io import BytesIO
+from pyxlsb import open_workbook as open_xlsb
 
 # Options for excel imports
 import pip
@@ -99,7 +101,12 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                               # Add buttons
                               reportdups = st.button('Duplicates Report', key= 'reportdups')
                               viewdups = st.button(' View Duplicates', key= 'vewdups')
-                              exportdups = st.button('Export Duplicates', key= 'exportdups')
+                              exportdups =  st.download_button(
+                                             label="Export Duplicates",
+                                             data=dup_data,
+                                             file_name="Duplicates.xlsx",
+                                             mime="application/vnd.ms-excel")
+
 
                with st.expander("Resolve Duplicates",expanded=False):
                          dup_data_vars = master_data.columns
