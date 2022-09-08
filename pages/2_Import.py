@@ -48,17 +48,20 @@ with datatab1:
         if "ds1" in st.session_state:
             st.header("Data overview")  # Give it a header
             df1= st.session_state["ds1"]
-            file_ext1 = df1.name.split('.')[-1]
+            
+            file_ext1 = df1.name.split('.')[-1]  # get file extension of selected file
             st.markdown(file_ext1)
-            try:     # CSV            
-                dataset1 = pd.read_csv(df1,dtype='unicode')
-                st.dataframe(dataset1) 
+            #CSV
+            if file_ext1 == 'csv':
+               dataset1 = pd.read_csv(df1,dtype='unicode')
+               st.dataframe(dataset1) 
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove                           
-            except: #xls , not yet finalized
+            elif file_ext1 == 'xls'or file_ext1 == 'xlsx': #xls , not yet finalized
                 dataset1 = pd.read_excel(df1, engine='openpyxl').astype(str)
                 st.dataframe()
                 #st.dataframe(pd.read_excel(df1))
-                #st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
+            else:
+                st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
                 #Support for Other file extensions would be added later**""")
 
 ##################
