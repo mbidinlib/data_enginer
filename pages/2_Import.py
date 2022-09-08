@@ -87,7 +87,7 @@ with datatab2:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df2,dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df1).astype(str))
+                st.dataframe(pd.read_excel(df2).astype(str))
 
 ##################
 # Dataset 3 tab
@@ -121,7 +121,7 @@ with datatab3:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df3,dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df1).astype(str))
+                st.dataframe(pd.read_excel(df3).astype(str))
 
 ##################
 # Dataset 4 tab
@@ -156,7 +156,7 @@ with datatab4:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df4,dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df1).astype(str))
+                st.dataframe(pd.read_excel(df4).astype(str))
 
 ##################
 # Dataset 5 tab
@@ -191,4 +191,4 @@ with datatab5:
             try:     # CSV            
                 st.dataframe(pd.read_csv(df5, dtype='unicode'))
             except: #xls , not yet finalized
-                st.dataframe(pd.read_excel(df1).astype(str))
+                st.dataframe(pd.read_excel(df5).astype(str))
