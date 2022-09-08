@@ -45,7 +45,7 @@ with datatab1:
             st.header("Data overview")  # Give it a header
             df1= st.session_state["dataset1"]
             try:     # CSV            
-                st.dataframe(pd.read_csv(df1,dtype='unicode')) ### Remove
+                st.dataframe(pd.read_csv(df1,dtype='unicode')) 
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove
             except: #xls , not yet finalized
                 st.dataframe(pd.read_excel(df1))
