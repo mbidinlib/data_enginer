@@ -83,22 +83,14 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                selected_df = "dataset5"
 
           seldata = st.session_state[selected_df]
-          try:
-               dup_data= pd.read_csv(seldata, dtype='unicode')             
-               #st.dataframe(dup_data)
-          except:
-                st.markdown(selected_df)
-               #dup_data= pd.read_csv(seldata, dtype='unicode')
-               #dup_data= pd.read_excel(seldata, engine='openpyxl').astype(str)
 
           # Check duplicates
           ##################
           with st.expander("Check Duplicates",expanded=False):
                
                if sel_df:
-                    st.markdown(sel_df)
-                    #dup_data_vars = dup_data.columns
-                    #options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
+                    dup_data_vars = dup_data.columns
+                    options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
 
 
 
@@ -106,8 +98,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
      ##########################
      with col2: 
           if sel_df:
-               st.markdown("Selected data")
-               #st.dataframe(dup_data)            
+               st.dataframe(seldata)            
 
 
 # When No data has been inported
