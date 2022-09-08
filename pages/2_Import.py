@@ -7,6 +7,7 @@ Purpose: Data Engineering
 from io import StringIO
 import pandas as pd
 import streamlit as st
+from pathlib import Path
 
 # Options for excel imports
 import pip
@@ -48,12 +49,17 @@ with datatab1:
         if "dataset1" in st.session_state:
             st.header("Data overview")  # Give it a header
             df1= st.session_state["dataset1"]
-            try:     # CSV            
+            file_path1 = Path(df1)
+            file_extension1 = file_path1.suffix.lower()[1:]
+
+            if file_extension1 == 'csv':
                 frame1 = st.dataframe(pd.read_csv(df1,dtype='unicode')) 
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove                           
-            except: #xls , not yet finalized
+            elif file_extension1 == 'xlsx' or file_extension1 == 'xls':
                 frame1= st.dataframe(pd.read_excel(df1).astype(str))
                 #st.dataframe(pd.read_excel(df1))
+            else:
+                st.markdown("Please select a csv or excel file types. Support for other file types would be added later")
 
 ##################
 # Dataset 2 tab
