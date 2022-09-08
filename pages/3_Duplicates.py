@@ -92,14 +92,21 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                          dup_data_vars = seldata.columns
                          options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
                          if options:
-                              reportdups = st.button('Duplicates Report', key= 'reportdups')
+
+                              dcol1, dcol2, dcol3 = st.columns(3)
+                              # Add buttons
+                              with dcol1:
+                                   reportdups = st.button('Duplicates Report', key= 'reportdups')
+                              with dcol2:
+                                   viewdups = st.button('View Duplicates', key= 'vewdups')
+                              with dcol3:
+                                   exportdups = st.button('Export Duplicates', key= 'exportdups')
+
                               if reportdups:
                                    st.markdown("There is nothing to Report on")
-                              viewdups = st.button('View Duplicates', key= 'vewdups')
                               if viewdups:
                                    st.markdown("There is nothing to view")  
-                              exportdups = st.button('Export Duplicates', key= 'exportdups')
-                              if reportdups:
+                              if exportdups:
                                    st.markdown("There is nothing to Export")
 
 
