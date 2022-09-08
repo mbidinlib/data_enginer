@@ -98,7 +98,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
 
                with st.expander("Resolve Duplicates",expanded=False):
                          dup_data_vars = seldata.columns
-                         options = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
+                         dupvars = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars, key='dupvars')
 
 
 
