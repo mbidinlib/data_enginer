@@ -83,13 +83,11 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                selected_df = "dataset5"
 
           with st.expander("Check Duplicates",expanded=False):
-               #try:
-               #dup_data= pd.read_csv(st.session_state[selected_df], dtype='unicode')             
+               try:
+                    dup_data= pd.read_csv(st.session_state[selected_df], dtype='unicode')             
                     #st.dataframe(dup_data)
-               st.markdown("hhhh")
-               #except:
-               #     dup_data_vars =   ""  
-                    #dup_data= pd.read_excel(st.session_state[selected_df])
+               except:
+                    dup_data= pd.read_excel(st.session_state[selected_df].astype(str))
                #dup_data_vars = dup_data.columns
                #options = st.multiselect(dup_data_vars)
 
@@ -98,8 +96,10 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
      #Column 2
      ##########################
      with col2: 
-              #st.dataframe(dup_data)            
-               st.markdown("jjj")
-if "dataset1" not in st.session_state or "dataset2" not in st.session_state:
+              st.dataframe(dup_data)            
+
+
+# When No data has been inported
+else:
      st.markdown("Go to the import page to import your dataset(s)")
 
