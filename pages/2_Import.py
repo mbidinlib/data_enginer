@@ -53,16 +53,17 @@ with datatab1:
             if file_ext1 == 'csv':
                dataset_1 = pd.read_csv(df1,dtype='unicode')
                st.dataframe(dataset_1) 
-                #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove                           
+                #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove  
+               st.session_state["dataset1"] = dataset_1                         
             elif file_ext1 == 'xls'or file_ext1 == 'xlsx': #xls , not yet finalized
                 dataset_1 = pd.read_excel(df1, engine='openpyxl').astype(str)
                 st.dataframe(dataset_1)
+                st.session_state["dataset1"] = dataset_1
                 #st.dataframe(pd.read_excel(df1))
             else:
                 st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
                 #Support for Other file extensions would be added later**""")
-    if "dataset_1" in st.session_state:
-        st.session_state["dataset1"] = dataset_1
+            
 
 
 ##################
