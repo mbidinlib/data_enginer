@@ -95,7 +95,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
 
                               # Add buttons
                               reportdups = st.button('Duplicates Report', key= 'reportdups')
-                              viewdups = st.button('View Duplicates', key= 'vewdups')
+                              viewdups = st.button('View  Duplicates', key= 'vewdups')
                               exportdups = st.button('Export Duplicates', key= 'exportdups')
 
                               if reportdups:
