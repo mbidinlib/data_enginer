@@ -87,7 +87,8 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                dup_data= pd.read_csv(seldata, dtype='unicode')             
                #st.dataframe(dup_data)
           except:
-               dup_data= pd.read_excel(seldata, engine='openpyxl').astype(str)
+                dup_data= pd.read_csv(seldata, dtype='unicode'
+               #dup_data= pd.read_excel(seldata, engine='openpyxl').astype(str)
 
           # Check duplicates
           ##################
@@ -103,6 +104,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
      ##########################
      with col2: 
           if sel_df:
+               st.markdown("Selected data")
                st.dataframe(dup_data)            
 
 
