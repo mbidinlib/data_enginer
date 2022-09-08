@@ -8,7 +8,6 @@ Purpose: Data Engineering
 from io import StringIO
 import pandas as pd
 import streamlit as st
-from st_btn_select import st_btn_select     # USed to add customised buttons side by side
 
 # Options for excel imports
 import pip
