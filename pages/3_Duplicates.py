@@ -102,15 +102,11 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                               reportdups = st.button('Duplicates Report', key= 'reportdups')
                               viewdups = st.button(' View Duplicates', key= 'vewdups')
                               
-                              dup_down = io.BytesIO()
-
                               # Create a Pandas Excel writer using XlsxWriter as the engine.
-                              with pd.ExcelWriter(dup_down, engine='xlsxwriter') as writer:
-                                   writer.save()
 
-                              dup_data_down = dup_data.to_excel()
-                              st.download_button(label = 'Export duplicates', data = dup_down, 
-                                   file_name = 'duplicates.xlsx', mime = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')      
+                              dup_data_down = dup_data.to_csv().encode('utf-8')
+                              st.download_button(label = 'Export duplicates', data = dup_data_down, 
+                                   file_name = 'duplicates.csv', mime = 'text/cvs')      
 
                with st.expander("Resolve Duplicates",expanded=False):
                          dup_data_vars = master_data.columns
