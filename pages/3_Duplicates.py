@@ -9,8 +9,9 @@ from io import StringIO
 import pandas as pd
 import streamlit as st
 
-#Import pages
-#from streamlit_multipage import MultiPage
+# Options for excel imports
+import pip
+pip.main(["install", "openpyxl"])
 
 
 st.markdown("# Check Duplicates ")
