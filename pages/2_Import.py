@@ -98,7 +98,7 @@ with datatab2:
             file_ext2 = df2.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext2 == 'csv':
-               dataset_2 = pd.read_csv(df2, encoding="utf-8", dtype = 'str')
+               dataset_2 = pd.read_csv(StringIO(df2.getvalue().decode("utf-8")))
                st.dataframe(dataset_2) 
                st.session_state["dataset2"] = dataset_2
             elif file_ext2 == 'xls'or file_ext2 == 'xlsx': #xls , not yet finalized
