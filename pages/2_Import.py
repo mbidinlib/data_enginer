@@ -36,7 +36,7 @@ with datatab1:
 
         # Optional short name of dataset        
         if "ds1" in st.session_state:  # Add option to give name
-            ds1_name = st.text_input("Short name of your dataset (optional). Default is *ds1*", key="name1")
+            ds1_name = st.text_input("Short name of your dataset (optional). Default is *dataset1*", key="name1")
             if ds1_name:
                 st.session_state["ds1_name"] = ds1_name
             if 'ds1_name' in st.session_state:
@@ -55,7 +55,7 @@ with datatab1:
                st.dataframe(dataset_1) 
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove  
                st.session_state["dataset1"] = dataset_1                         
-            elif file_ext1 == 'xls'or file_ext1 == 'xlsx': #xls , not yet finalized
+            elif file_ext1 == 'xls'or file_ext1 == 'xlsx':
                 dataset_1 = pd.read_excel(df1, engine='openpyxl').astype(str)
                 st.dataframe(dataset_1)
                 st.session_state["dataset1"] = dataset_1
@@ -83,7 +83,7 @@ with datatab2:
             st.session_state["ds2"] = ds2 #.getvalue().decode("utf-8")
         # Optional short name of dataset        
         if "ds2" in st.session_state:  # Add option to give name
-            ds2_name = st.text_input("Short name of your dataset (optional). The default is *ds2*", key="name2")
+            ds2_name = st.text_input("Short name of your dataset (optional). The default is *dataset2*", key="name2")
             if ds2_name:
                 st.session_state["ds2_name"] = ds2_name
             if 'ds2_name' in st.session_state:
