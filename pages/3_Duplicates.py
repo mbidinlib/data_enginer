@@ -128,19 +128,18 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                          dupdrop_data = master_data.drop_duplicates(subset= dup_id, keep=False)
                     
                     # Addoptions to rename corrected data and download it
-                    dupdrop_name = st.text_input("Optional:Give your corrected dataset a shortname. Default if dupdrop_data", key="dupdrop_name")
-                    if dupdrop_name:
-                         st.session_state["dupdrop_name1"] = dupdrop_data
-                         st.session_state["dupdrop_name2"] = dupdrop_name + ".csv"
-                    else:
-                         st.session_state["dupdrop_name1"] = dupdrop_data 
-                         st.session_state["dupdrop_name2"] = "dupdrop_data.csv"
-                    if 'dupdrop_name2' in st.session_state:
-                         st.markdown(st.session_state["dupdrop_name1"])   
-                    # Add download button
-                    dup_drop_name = st.session_state["dupdrop_name2"]
-
                     if keepfirst or keeplast or keepnone:
+                         dupdrop_name = st.text_input("Optional:Give your corrected dataset a shortname. Default if dupdrop_data", key="dupdrop_name")
+                         if dupdrop_name:
+                              st.session_state["dupdrop_name1"] = dupdrop_data
+                              st.session_state["dupdrop_name2"] = dupdrop_name + ".csv"
+                         else:
+                             st.session_state["dupdrop_name1"] = dupdrop_data 
+                             st.session_state["dupdrop_name2"] = "dupdrop_data.csv"
+                         if 'dupdrop_name2' in st.session_state:
+                              st.markdown(st.session_state["dupdrop_name1"])   
+                         # Add download button
+                         dup_drop_name = st.session_state["dupdrop_name2"]
                          dup_drop_down = dupdrop_data.to_csv().encode('utf-8')
                          st.download_button(label = 'Export duplicates', data = dup_drop_down, 
                               file_name = dup_drop_name , mime = 'text/cvs')      
