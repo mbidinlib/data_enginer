@@ -100,15 +100,14 @@ with datatab2:
             if file_ext2 == 'csv':
                dataset_2 = pd.read_csv(df2,dtype='unicode')
                st.dataframe(dataset_2) 
+               st.session_state["dataset2"] = dataset_2
             elif file_ext2 == 'xls'or file_ext2 == 'xlsx': #xls , not yet finalized
                 dataset_2 = pd.read_excel(df2, engine='openpyxl').astype(str)
                 st.dataframe(dataset_2)
+                st.session_state["dataset2"] = dataset_2
             else:
                 st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
                 #Support for Other file extensions would be added later**""")
-    # Keep dataset in session.state
-    if "dataset_2" in st.session_state:
-        st.session_state["dataset2"] = dataset_2
 
 ##################
 # Dataset 3 tab
@@ -144,14 +143,14 @@ with datatab3:
             if file_ext3 == 'csv':
                dataset_3 = pd.read_csv(df3,dtype='unicode')
                st.dataframe(dataset_3) 
+               st.session_state["dataset3"] = dataset_3
             elif file_ext3 == 'xls'or file_ext3 == 'xlsx': #xls , not yet finalized
                 dataset_3 = pd.read_excel(df3, engine='openpyxl').astype(str)
                 st.dataframe(dataset_3)
+                st.session_state["dataset3"] = dataset_3
             else:
                 st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
                 #Support for Other file extensions would be added later**""")
-    if "dataset_3" in st.session_state:
-        st.session_state["dataset3"] = dataset_3
 
 
 ##################
@@ -189,14 +188,14 @@ with datatab4:
             if file_ext4 == 'csv':
                dataset_4 = pd.read_csv(df4,dtype='unicode')
                st.dataframe(dataset_4) 
+               st.session_state["dataset4"] = dataset_4
             elif file_ext4 == 'xls'or file_ext4 == 'xlsx': #xls , not yet finalized
                 dataset_4 = pd.read_excel(df4, engine='openpyxl').astype(str)
                 st.dataframe(dataset_4)
+                st.session_state["dataset4"] = dataset_4
             else:
                 st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
                 #Support for Other file extensions would be added later**""")
-    if "dataset_4" in st.session_state:
-        st.session_state["dataset4"] = dataset_4
 
 ##################
 # Dataset 5 tab
@@ -231,11 +230,13 @@ with datatab5:
             file_ext5 = df5.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext5 == 'csv':
-               dataset_5 = pd.read_csv(df5,dtype='unicode')
+               dataset_5 = pd.read_csv(df5)
                st.dataframe(dataset_5) 
+               st.session_state["dataset5"] = dataset_5
             elif file_ext5 == 'xls'or file_ext5 == 'xlsx': #xls , not yet finalized
                 dataset_5 = pd.read_excel(df5, engine='openpyxl').astype(str)
                 st.dataframe(dataset_5)
+                st.session_state["dataset5"] = dataset_5
             else:
                 st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
                 #Support for Other file extensions would be added later**""")
