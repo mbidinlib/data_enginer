@@ -51,8 +51,8 @@ with datatab1:
             file_ext1 = df1.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext1 == 'csv':
-               dataset_1 = pd.read_csv(df1,encoding='utf-8')
-               st.write(dataset_1) 
+               dataset_1 = pd.read_csv(df1,engine="c").astype(str)
+               st.dataframe(dataset_1) 
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove  
                st.session_state["dataset1"] = dataset_1                         
             elif file_ext1 == 'xls'or file_ext1 == 'xlsx':
