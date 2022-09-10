@@ -122,19 +122,25 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                     # Define actions
                     if keepfirst:
                          dupdrop_data = master_data.drop_duplicates(subset= dup_id, keep='first')
+                         st.session_state["dup_drop_data"] = dupdrop_data
                     elif keeplast:
                          dupdrop_data = master_data.drop_duplicates(subset= dup_id, keep='last')
+                         st.session_state["dup_drop_data"] = dupdrop_data
                     elif keepnone:
                          dupdrop_data = master_data.drop_duplicates(subset= dup_id, keep=False)
-                    
+                         st.session_state["dup_drop_data"] = dupdrop_data
+                    else:
+                         st.session_state["dup_drop_data"] = ""
+
                     # Addoptions to rename corrected data and download it
-                    if keepfirst or keeplast or keepnone:
+                    dup_drop_data = st.session_state["dup_drop_data"]
+                    if dup_drop_data :
                          dupdrop_name = st.text_input("Optional:Give your corrected dataset a shortname. Default if dupdrop_data", key="dupdrop_name")
                          if dupdrop_name:
-                              st.session_state["dupdrop_name1"] = dupdrop_data
+                              st.session_state["dupdrop_name1"] = dup_drop_data
                               st.session_state["dupdrop_name2"] = dupdrop_name + ".csv"
                          else:
-                             st.session_state["dupdrop_name1"] = dupdrop_data 
+                             st.session_state["dupdrop_name1"] = dup_drop_data 
                              st.session_state["dupdrop_name2"] = "dupdrop_data.csv"
                          if 'dupdrop_name2' in st.session_state:
                               st.markdown(st.session_state["dupdrop_name1"])   
