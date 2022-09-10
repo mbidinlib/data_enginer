@@ -145,7 +145,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                               st.markdown(st.session_state["dupdrop_name1"])   
                          # Add download button
                          dup_drop_name = st.session_state["dupdrop_name2"]
-                         dup_drop_down = dupdrop_data.to_csv().encode('utf-8')
+                         dup_drop_down = dup_drop_data.to_csv().encode('utf-8')
                          st.download_button(label = 'Export duplicates', data = dup_drop_down, 
                               file_name = dup_drop_name , mime = 'text/cvs')      
 
