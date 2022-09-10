@@ -26,7 +26,7 @@ with datatab1:
     #Column one
     with col1:
         st.subheader("Select file")
-        ds1 = st.file_uploader("Select Data file", type=['xlsx'], key = "data1")
+        ds1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data1")
         st.markdown("")
         st.markdown("")
         
@@ -51,7 +51,7 @@ with datatab1:
             file_ext1 = df1.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext1 == 'csv':
-               dataset_1 = pd.read_csv(df1 , encoding="utf-8", dtype = 'unicode')
+               dataset_1 = pd.read_csv(df1)
                st.dataframe(dataset_1) 
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove  
                st.session_state["dataset1"] = dataset_1                         
@@ -74,7 +74,7 @@ with datatab2:
     #Column one
     with col1:
         st.subheader("Select file")
-        ds2 = st.file_uploader("Select Data file", type=['xlsx'], key = "data2")
+        ds2 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data2")
         st.markdown("")
         st.markdown("")
         
@@ -98,7 +98,7 @@ with datatab2:
             file_ext2 = df2.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext2 == 'csv':
-               dataset_2 = pd.read_csv(df2, encoding="utf-8", dtype = 'unicode')
+               dataset_2 = pd.read_csv(df2)
                st.dataframe(dataset_2) 
                st.session_state["dataset2"] = dataset_2
             elif file_ext2 == 'xls'or file_ext2 == 'xlsx': #xls , not yet finalized
@@ -117,7 +117,7 @@ with datatab3:
     #Column one
     with col1:
         st.subheader("Select file")
-        ds3 = st.file_uploader("Select Data file", type=['xlsx'], key = "data3")
+        ds3 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data3")
         st.markdown("")
         st.markdown("")
         
@@ -141,7 +141,7 @@ with datatab3:
             file_ext3 = df3.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext3 == 'csv':
-               dataset_3 = pd.read_csv(df3, encoding="utf-8", dtype = 'unicode')
+               dataset_3 = pd.read_csv(df3)
                st.dataframe(dataset_3) 
                st.session_state["dataset3"] = dataset_3
             elif file_ext3 == 'xls'or file_ext3 == 'xlsx': #xls , not yet finalized
@@ -161,7 +161,7 @@ with datatab4:
     #Column one
     with col1:
         st.subheader("Select file")
-        ds4 = st.file_uploader("Select Data file", type=['xlsx'], key = "data4")
+        ds4 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data4")
         st.markdown("")
         st.markdown("")
         
@@ -186,7 +186,7 @@ with datatab4:
             file_ext4 = df4.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext4 == 'csv':
-               dataset_4 = pd.read_csv(df4 , encoding="utf-8", dtype = 'unicode')
+               dataset_4 = pd.read_csv(df4)
                st.dataframe(dataset_4) 
                st.session_state["dataset4"] = dataset_4
             elif file_ext4 == 'xls'or file_ext4 == 'xlsx': #xls , not yet finalized

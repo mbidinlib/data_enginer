@@ -152,7 +152,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
 
           if sel_df != "":
                if dup_id and (reportdups or viewdups):
-                    st.markdown(f"""Duplicates based on : <b><font style="color:#D9B604">{dup_key}</font></b>""",  
+                    st.markdown(f"""Duplicates based on : <b><font style="color:#D9B604">{dup_id}</font></b>""",  
                     unsafe_allow_html=True)
                     st.dataframe(dup_data)   # display duplicates data
                else:
