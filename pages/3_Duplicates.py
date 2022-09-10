@@ -112,11 +112,11 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                with st.expander("Resolve Duplicates",expanded=False):
                     
                     #Define Action buttons
-                    keepfirst = st.button('Keep first', key= 'keepfirst', help=
+                    keepfirst = st.button('Keep First', key= 'keepfirst', help=
                     "This will keep  only the first occurence and delete all other observations with the same id specified")
-                    keeplast = st.button('Keep last', key= 'keeplast', help=
+                    keeplast = st.button('Keep Last', key= 'keeplast', help=
                     "This will keep  only the last occurence and delete all other observations with the same id specified")
-                    keepnone = st.button('Keep last', key= 'keepnone', help=
+                    keepnone = st.button('Keep None', key= 'keepnone', help=
                     "This delete all observations that are duplicates based on the id specified")
                     
                     # Define actions
@@ -129,12 +129,11 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                     elif keepnone:
                          dupdrop_data = master_data.drop_duplicates(subset= dup_id, keep=False)
                          st.session_state["dup_drop_data"] = dupdrop_data
-                    else:
-                         st.session_state["dup_drop_data"] = ""
+                    
 
                     # Addoptions to rename corrected data and download it
-                    dup_drop_data = st.session_state["dup_drop_data"]
-                    if dup_drop_data :
+                    if "dup_drop_data" in st.session_state:
+                         dup_drop_data = st.session_state["dup_drop_data"]
                          dupdrop_name = st.text_input("Optional:Give your corrected dataset a shortname. Default if dupdrop_data", key="dupdrop_name")
                          if dupdrop_name:
                               st.session_state["dupdrop_name1"] = dup_drop_data
