@@ -230,7 +230,7 @@ with datatab5:
             file_ext5 = df5.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext5 == 'csv':
-               dataset_5 = pd.read_csv(ds5.getvalue().decode("utf-8"))
+               dataset_5 = pd.read_csv(ds5,dtype='unicode')
                st.dataframe(dataset_5) 
                st.session_state["dataset5"] = dataset_5
             elif file_ext5 == 'xls'or file_ext5 == 'xlsx': #xls , not yet finalized
