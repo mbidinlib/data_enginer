@@ -26,7 +26,7 @@ with datatab1:
     #Column one
     with col1:
         st.subheader("Select file")
-        ds1 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data1")
+        ds1 = st.file_uploader("Select Data file", type=['xlsx'], key = "data1")
         st.markdown("")
         st.markdown("")
         
@@ -74,7 +74,7 @@ with datatab2:
     #Column one
     with col1:
         st.subheader("Select file")
-        ds2 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data2")
+        ds2 = st.file_uploader("Select Data file", type=['xlsx'], key = "data2")
         st.markdown("")
         st.markdown("")
         
@@ -117,7 +117,7 @@ with datatab3:
     #Column one
     with col1:
         st.subheader("Select file")
-        ds3 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data3")
+        ds3 = st.file_uploader("Select Data file", type=['xlsx'], key = "data3")
         st.markdown("")
         st.markdown("")
         
@@ -161,7 +161,7 @@ with datatab4:
     #Column one
     with col1:
         st.subheader("Select file")
-        ds4 = st.file_uploader("Select Data file", type=["csv", 'xlsx'], key = "data4")
+        ds4 = st.file_uploader("Select Data file", type=['xlsx'], key = "data4")
         st.markdown("")
         st.markdown("")
         
