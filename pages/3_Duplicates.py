@@ -91,11 +91,11 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                ##################
                with st.expander("Check Duplicates",expanded=False):
                          dup_data_vars = master_data.columns
-                         dup_key = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars)
-                         if dup_key:
+                         dup_id = st.multiselect("Select the id variable. This can also be a combination of variables",dup_data_vars)
+                         if dup_id:
 
                               # Query duplicates:
-                              dup_data = master_data[master_data.duplicated(dup_key, keep = False)]
+                              dup_data = master_data[master_data.duplicated(dup_id, keep = False)]
                               
                               
                               # Add buttons
@@ -107,10 +107,41 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
                               dup_data_down = dup_data.to_csv().encode('utf-8')
                               st.download_button(label = 'Export duplicates', data = dup_data_down, 
                                    file_name = 'duplicates.csv', mime = 'text/cvs')      
-
+               
+               # Resolve duplicates
                with st.expander("Resolve Duplicates",expanded=False):
-                         dup_data_vars = master_data.columns
-                         #dupvars = st.multiselect("Select the key variable. This can also be a combination of variables",dup_data_vars, key='dupvars')
+                    
+                    #Define Action buttons
+                    keepfirst = st.button('Keep first', key= 'keepfirst', help=
+                    "This will keep  only the first occurence and delete all other observations with the same id specified")
+                    keeplast = st.button('Keep last', key= 'keeplast', help=
+                    "This will keep  only the last occurence and delete all other observations with the same id specified")
+                    keepnone = st.button('Keep last', key= 'keepnone', help=
+                    "This delete all observations that are duplicates based on the id specified")
+                    
+                    # Define actions
+                    if keepfirst:
+                         dupdrop_data = master_data.drop_duplicates(subset= dup_id, keep='first')
+                    elif keeplast:
+                         dupdrop_data = master_data.drop_duplicates(subset= dup_id, keep='last')
+                    elif keepnone:
+                         dupdrop_data = master_data.drop_duplicates(subset= dup_id, keep=False)
+                    
+                    # Addoptions to rename corrected data and download it
+                    if keepfirst or keeplast or keepnone:
+                         dupdrop_name = st.text_input("Optional:Give your corrected dataset a shortname. Default if dupdrop_data", key="dupdrop_name")
+                         if dupdrop_name:
+                              st.session_state["dupdrop_name"] = dupdrop_data
+                              st.session_state["dupdrop_name1"] = dupdrop_name
+                         else:
+                             st.session_state["dupdrop_name"] = dupdrop_data 
+                         if 'dupdrop_name' in st.session_state:
+                              st.markdown(st.session_state["dupdrop_name1"])   
+                         dup_drop_down = dupdrop_data.to_csv().encode('utf-8')
+                         st.download_button(label = 'Export duplicates', data = dup_drop_down, 
+                              file_name = 'duplicates.csv', mime = 'text/cvs')      
+
+                    
 
 
 
@@ -120,7 +151,7 @@ if ("dataset1" in st.session_state or "dataset2" in st.session_state or "dataset
      with col2:
 
           if sel_df != "":
-               if dup_key and (reportdups or viewdups):
+               if dup_id and (reportdups or viewdups):
                     st.markdown(f"""Duplicates based on : <b><font style="color:#D9B604">{dup_key}</font></b>""",  
                     unsafe_allow_html=True)
                     st.dataframe(dup_data)   # display duplicates data
