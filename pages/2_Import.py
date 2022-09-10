@@ -51,7 +51,7 @@ with datatab1:
             file_ext1 = df1.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext1 == 'csv':
-               dataset_1 = pd.read_csv(df1)
+               dataset_1 = pd.read_csv(df1 , encoding="utf-8", dtype = 'unicode')
                st.dataframe(dataset_1) 
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove  
                st.session_state["dataset1"] = dataset_1                         
@@ -141,7 +141,7 @@ with datatab3:
             file_ext3 = df3.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext3 == 'csv':
-               dataset_3 = pd.read_csv(df3)
+               dataset_3 = pd.read_csv(df3, encoding="utf-8", dtype = 'unicode')
                st.dataframe(dataset_3) 
                st.session_state["dataset3"] = dataset_3
             elif file_ext3 == 'xls'or file_ext3 == 'xlsx': #xls , not yet finalized
@@ -186,7 +186,7 @@ with datatab4:
             file_ext4 = df4.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext4 == 'csv':
-               dataset_4 = pd.read_csv(df4)
+               dataset_4 = pd.read_csv(df4 , encoding="utf-8", dtype = 'unicode')
                st.dataframe(dataset_4) 
                st.session_state["dataset4"] = dataset_4
             elif file_ext4 == 'xls'or file_ext4 == 'xlsx': #xls , not yet finalized
@@ -230,7 +230,7 @@ with datatab5:
             file_ext5 = df5.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext5 == 'csv':
-               dataset_5 = pd.read_csv(df5)
+               dataset_5 = pd.read_csv(df5, encoding="utf-8", dtype = 'unicode')
                st.dataframe(dataset_5) 
                st.session_state["dataset5"] = dataset_5
             elif file_ext5 == 'xls'or file_ext5 == 'xlsx': #xls , not yet finalized
