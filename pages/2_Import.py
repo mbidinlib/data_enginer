@@ -230,7 +230,7 @@ with datatab5:
             file_ext5 = df5.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext5 == 'csv':
-               dataset_5 = pd.read_csv(df5)
+               dataset_5 = pd.read_csv(df5.getvalue().decode("utf-8"))
                st.dataframe(dataset_5) 
                st.session_state["dataset5"] = dataset_5
             elif file_ext5 == 'xls'or file_ext5 == 'xlsx': #xls , not yet finalized
@@ -240,5 +240,3 @@ with datatab5:
             else:
                 st.markdown("""**This file is type is currently not accepted. Upload a file with a .csv or xls extenssion. 
                 #Support for Other file extensions would be added later**""")
-    if "dataset_5" in st.session_state:
-        st.session_state["dataset5"] = dataset_5
