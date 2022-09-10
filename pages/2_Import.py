@@ -51,7 +51,7 @@ with datatab1:
             file_ext1 = df1.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext1 == 'csv':
-               dataset_1 = pd.read_csv(df1,dtype='unicode')
+               dataset_1 = pd.read_csv(df1)
                st.dataframe(dataset_1) 
                 #st.dataframe(pd.read_csv(StringIO(df1),dtype='unicode')) ### Remove  
                st.session_state["dataset1"] = dataset_1                         
@@ -98,7 +98,7 @@ with datatab2:
             file_ext2 = df2.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext2 == 'csv':
-               dataset_2 = pd.read_csv(df2,dtype='unicode')
+               dataset_2 = pd.read_csv(df2)
                st.dataframe(dataset_2) 
                st.session_state["dataset2"] = dataset_2
             elif file_ext2 == 'xls'or file_ext2 == 'xlsx': #xls , not yet finalized
@@ -141,7 +141,7 @@ with datatab3:
             file_ext3 = df3.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext3 == 'csv':
-               dataset_3 = pd.read_csv(df3,dtype='unicode')
+               dataset_3 = pd.read_csv(df3)
                st.dataframe(dataset_3) 
                st.session_state["dataset3"] = dataset_3
             elif file_ext3 == 'xls'or file_ext3 == 'xlsx': #xls , not yet finalized
@@ -186,7 +186,7 @@ with datatab4:
             file_ext4 = df4.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext4 == 'csv':
-               dataset_4 = pd.read_csv(df4,dtype='unicode')
+               dataset_4 = pd.read_csv(df4)
                st.dataframe(dataset_4) 
                st.session_state["dataset4"] = dataset_4
             elif file_ext4 == 'xls'or file_ext4 == 'xlsx': #xls , not yet finalized
@@ -230,7 +230,7 @@ with datatab5:
             file_ext5 = df5.name.split('.')[-1]  # get file extension of selected file
 
             if file_ext5 == 'csv':
-               dataset_5 = pd.read_csv(df5,dtype='unicode')
+               dataset_5 = pd.read_csv(df5)
                st.dataframe(dataset_5) 
                st.session_state["dataset5"] = dataset_5
             elif file_ext5 == 'xls'or file_ext5 == 'xlsx': #xls , not yet finalized
